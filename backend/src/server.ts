@@ -2,7 +2,11 @@ import { app } from './app.js';
 import { CONFIG } from './config.js';
 import { runMigrations } from './database/migrations.js';
 
-runMigrations();
+try {
+  runMigrations();
+} catch (e) {
+  console.warn('[Kawach DB Migration Notice]:', e);
+}
 
 const primaryPort = CONFIG.PORT || 8080;
 

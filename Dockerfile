@@ -32,6 +32,9 @@ RUN npm run build
 # ------------------------------------------------------------------------------
 FROM python:3.11-slim AS runner
 
+# Cache-busting identifier to ensure Railway builds a completely fresh image
+ENV BUILD_VERSION="kawach-prod-v3"
+
 # Install Node.js 20, build dependencies (for SQLite native addon), and OpenMP (for XGBoost)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
