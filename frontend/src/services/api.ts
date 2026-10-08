@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AuthService } from './auth';
 import { ScanResultData, ModelMetadata, FraudReport, User, GovernanceData } from '../types';
 
-const API_BASE = '/api/v1';
+const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api/v1';
 
 const apiClient = axios.create({
   baseURL: API_BASE,

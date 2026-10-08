@@ -4,6 +4,6 @@ import { runMigrations } from './database/migrations.js';
 
 runMigrations();
 
-app.listen(CONFIG.PORT, () => {
-  console.log(`[PS5 Backend API] Running on http://127.0.0.1:${CONFIG.PORT} in ${CONFIG.NODE_ENV} mode`);
+app.listen(CONFIG.PORT, '0.0.0.0', () => {
+  console.log(`[PS5 Backend API] Running on http://0.0.0.0:${CONFIG.PORT} in ${CONFIG.NODE_ENV} mode`);
 });

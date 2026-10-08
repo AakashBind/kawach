@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "tsc && node -e \"const fs=require('fs'),p=require('path');const d=p.join('dist','database');if(!fs.existsSync(d))fs.mkdirSync(d,{recursive:true});fs.copyFileSync(p.join('src','database','schema.sql'),p.join(d,'schema.sql'));\"",
     "start": "node dist/server.js",
     "test": "jest --runInBand --detectOpenHandles"
   },

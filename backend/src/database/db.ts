@@ -17,7 +17,10 @@ export function initDatabase() {
     path.join(__dirname, 'schema.sql'),
     path.join(__dirname, '..', 'src', 'database', 'schema.sql'),
     path.join(process.cwd(), 'src', 'database', 'schema.sql'),
-    path.join(process.cwd(), 'dist', 'database', 'schema.sql')
+    path.join(process.cwd(), 'dist', 'database', 'schema.sql'),
+    path.join(process.cwd(), 'backend', 'src', 'database', 'schema.sql'),
+    path.join(process.cwd(), 'backend', 'dist', 'database', 'schema.sql'),
+    path.join(__dirname, '../../src/database/schema.sql')
   ];
 
   for (const p of possiblePaths) {

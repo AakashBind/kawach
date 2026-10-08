@@ -1,0 +1,32 @@
+# ==============================================================================
+# Standalone Backend API Dockerfile (Node.js + Express) for Railway
+# ==============================================================================
+FROM node:20-slim AS builder
+WORKDIR /app/backend
+
+COPY backend/package*.json ./
+RUN npm ci || npm install
+
+COPY backend ./
+RUN npm run build
+
+FROM node:20-slim AS runner
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/backend
+COPY backend/package*.json ./
+RUN npm install --omit=dev || npm ci --omit=dev
+
+COPY --from=builder /app/backend/dist ./dist
+COPY backend/src/database/schema.sql ./src/database/schema.sql
+
+ENV NODE_ENV=production
+ENV PORT=5000
+EXPOSE 5000
+
+CMD ["node", "dist/server.js"]

@@ -13,8 +13,14 @@ export function runMigrations() {
   `).run();
 
   // Seed authoritative model metadata
-  const mlModelsDir = path.resolve(__dirname, '../../../ml/models');
-  if (fs.existsSync(mlModelsDir)) {
+  const mlCandidates = [
+    path.resolve(__dirname, '../../../ml/models'),
+    path.resolve(process.cwd(), 'ml/models'),
+    path.resolve(process.cwd(), '../ml/models'),
+    path.resolve(__dirname, '../../ml/models')
+  ];
+  const mlModelsDir = mlCandidates.find(p => fs.existsSync(p));
+  if (mlModelsDir && fs.existsSync(mlModelsDir)) {
     // 1. URL Phishing v2.0.0 (Active)
     const urlMetaPath = path.join(mlModelsDir, 'url_phishing/metadata.json');
     if (fs.existsSync(urlMetaPath)) {
