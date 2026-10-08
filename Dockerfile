@@ -68,11 +68,7 @@ COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 WORKDIR /app
 COPY ml ./ml
 
-# 6. Copy root configuration & startup runner
-COPY start.sh ./start.sh
-RUN chmod +x ./start.sh
-
-# Environment variables for Railway
+# 6. Environment variables for Railway
 ENV NODE_ENV=production
 ENV PORT=8080
 ENV ML_SERVICE_URL=http://127.0.0.1:8000
@@ -81,5 +77,5 @@ ENV DATABASE_PATH=/app/data/scam_shield.db
 # Expose Railway default ports
 EXPOSE 8080 5000
 
-# Start both ML microservice and Node.js backend
-CMD ["/bin/sh", "./start.sh"]
+# Start both ML microservice in background and Node.js backend in foreground
+CMD ["sh", "-c", "python3 -m uvicorn ml.service.app:app --host 127.0.0.1 --port 8000 & node backend/dist/server.js"]
