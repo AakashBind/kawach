@@ -20,26 +20,52 @@ export interface ChatMessage {
 
 export const GeminiService = {
   async askSecurityCopilot(userPrompt: string, history: ChatMessage[] = []): Promise<string> {
-    const apiKey = CONFIG.GEMINI_API_KEY;
+    const apiKey =
+      process.env.GEMINI_API_KEY ||
+      process.env.GOOGLE_API_KEY ||
+      process.env.GEMINI_KEY ||
+      CONFIG.GEMINI_API_KEY;
 
     if (!apiKey) {
+      console.warn('[GeminiService]: No API key detected in environment variables.');
       return this.getLocalCybersecurityFallback(userPrompt);
     }
 
     try {
-      // Map history to Gemini API contents format
-      const contents = history.map((msg) => ({
-        role: msg.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: msg.content }]
-      }));
+      // Gemini API rule: First message MUST be 'user', and roles must alternate
+      const validContents: { role: 'user' | 'model'; parts: { text: string }[] }[] = [];
 
-      contents.push({
-        role: 'user',
-        parts: [{ text: userPrompt }]
-      });
+      for (const msg of history) {
+        if (!msg || !msg.content) continue;
+        const mappedRole: 'user' | 'model' = msg.role === 'assistant' || msg.role === 'model' ? 'model' : 'user';
 
-      // Support Gemini 2.0 / 1.5 flash free tier
-      const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-flash-8b'];
+        // Do not add 'model' as the first message
+        if (validContents.length === 0 && mappedRole === 'model') {
+          continue;
+        }
+
+        if (validContents.length > 0 && validContents[validContents.length - 1].role === mappedRole) {
+          // Merge consecutive identical roles
+          validContents[validContents.length - 1].parts[0].text += '\n' + msg.content;
+        } else {
+          validContents.push({ role: mappedRole, parts: [{ text: msg.content }] });
+        }
+      }
+
+      // Add current user prompt
+      if (validContents.length > 0 && validContents[validContents.length - 1].role === 'user') {
+        validContents[validContents.length - 1].parts[0].text += '\n' + userPrompt;
+      } else {
+        validContents.push({ role: 'user', parts: [{ text: userPrompt }] });
+      }
+
+      // Support Gemini models
+      const modelsToTry = [
+        'gemini-1.5-flash',
+        'gemini-2.0-flash',
+        'gemini-1.5-flash-latest',
+        'gemini-1.5-pro'
+      ];
       let lastError: any = null;
 
       for (const model of modelsToTry) {
@@ -48,13 +74,13 @@ export const GeminiService = {
           const response = await axios.post(
             endpoint,
             {
-              contents,
+              contents: validContents,
               systemInstruction: {
                 parts: [{ text: CYBER_SECURITY_SYSTEM_PROMPT }]
               },
               generationConfig: {
-                temperature: 0.4,
-                maxOutputTokens: 1000
+                temperature: 0.5,
+                maxOutputTokens: 1024
               }
             },
             {
@@ -70,12 +96,12 @@ export const GeminiService = {
           }
         } catch (err: any) {
           lastError = err;
-          // If model not found or rate limit, try next model
+          console.warn(`[GeminiService Model ${model} Failed]:`, err.response?.data?.error?.message || err.message);
           continue;
         }
       }
 
-      console.warn('[GeminiService API Notice]:', lastError?.response?.data || lastError?.message);
+      console.error('[GeminiService All Models Exhausted]:', lastError?.response?.data || lastError?.message);
       return this.getLocalCybersecurityFallback(userPrompt);
     } catch (err: any) {
       console.error('[GeminiService Exception]:', err.message);
@@ -98,6 +124,6 @@ export const GeminiService = {
       return `🚨 **EMERGENCY RESPONSE FOR MALICIOUS APKS**\n\n1. **Turn Off Network**: Put your phone on Airplane Mode and disconnect from Wi-Fi immediately.\n2. **Boot Into Safe Mode**: Restart your Android phone into Safe Mode (this stops third-party apps from running).\n3. **Remove Device Admin Privileges**: Go to *Settings > Security > Device Administrators* and deactivate the suspicious app.\n4. **Uninstall the App**: Uninstall the suspicious APK from *Settings > Apps*.\n5. **Check Bank Accounts**: From a separate safe device, check your bank transactions and freeze UPI if necessary.`;
     }
 
-    return `🛡️ **Kawach Security Advisory**\n\nI am your Kawach AI Security Copilot. To protect yourself from scams:\n\n1. **Never share OTPs, UPI PINs, or bank passwords** with anyone claiming to be from customer care, courier delivery, or government agencies.\n2. **If money was debited without consent**, call **1930** or your bank immediately within the Golden Hour.\n3. **To verify any link or message**, use our Kawach scanner tab to run machine learning threat analysis.\n\n*(Note: Add your GEMINI_API_KEY in Railway Variables for full generative real-time intelligence).*`;
+    return `🛡️ **Kawach Security Advisory**\n\nI am your Kawach AI Security Copilot. To protect yourself from scams:\n\n1. **Never share OTPs, UPI PINs, or bank passwords** with anyone claiming to be from customer care, courier delivery, or government agencies.\n2. **If money was debited without consent**, call **1930** or your bank immediately within the Golden Hour.\n3. **To verify any link or message**, use our Kawach scanner tab to run machine learning threat analysis.`;
   }
 };
