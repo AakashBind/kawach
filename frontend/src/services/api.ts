@@ -106,5 +106,11 @@ export const ApiService = {
   async getMe(): Promise<User> {
     const res = await apiClient.get('/auth/me');
     return res.data.data.user;
+  },
+
+  // AI Security Copilot (Gemini)
+  async askAssistant(message: string, history?: { role: 'user' | 'assistant'; content: string }[]): Promise<string> {
+    const res = await apiClient.post('/assistant/chat', { message, history });
+    return res.data.data.reply;
   }
 };

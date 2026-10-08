@@ -13,6 +13,8 @@ import { EducationPage } from './pages/EducationPage';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { AccountPage } from './pages/AccountPage';
+import { AssistantPage } from './pages/AssistantPage';
+import { SecurityCopilot } from './components/SecurityCopilot';
 import { AuthService } from './services/auth';
 
 export const App: React.FC = () => {
@@ -45,9 +47,11 @@ export const App: React.FC = () => {
                 <Route path="/login" element={<LoginPage onLoginSuccess={handleAuthChange} />} />
                 <Route path="/register" element={<RegisterPage onRegisterSuccess={handleAuthChange} />} />
                 <Route path="/account" element={<AccountPage onLogout={handleLogout} />} />
+                <Route path="/assistant" element={<AssistantPage />} />
               </Routes>
             </main>
             <Footer />
+            <SecurityCopilot />
           </div>
         </div>
       </BrowserRouter>

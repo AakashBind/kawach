@@ -9,6 +9,7 @@ import { reportRouter } from './routes/reportRoutes.js';
 import { feedbackRouter } from './routes/feedbackRoutes.js';
 import { modelRouter } from './routes/modelRoutes.js';
 import { healthRouter } from './routes/healthRoutes.js';
+import { assistantRouter } from './routes/assistantRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { CONFIG } from './config.js';
 
@@ -35,6 +36,7 @@ app.use('/api/v1/reports', reportRouter);
 app.use('/api/v1/feedback', feedbackRouter);
 app.use('/api/v1/models', modelRouter);
 app.use('/api/v1/health', healthRouter);
+app.use('/api/v1/assistant', assistantRouter);
 
 // Frontend static serving for production unified deployment
 const clientDistCandidates = [
