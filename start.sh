@@ -5,7 +5,7 @@ echo "=========================================================="
 echo " Starting Kawach Production Platform on Railway"
 echo "=========================================================="
 
-export PORT="${PORT:-5000}"
+export PORT="${PORT:-8080}"
 export NODE_ENV="${NODE_ENV:-production}"
 export ML_SERVICE_URL="${ML_SERVICE_URL:-http://127.0.0.1:8000}"
 export DATABASE_PATH="${DATABASE_PATH:-/app/data/scam_shield.db}"

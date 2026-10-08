@@ -4,7 +4,7 @@ import path from 'path';
 dotenv.config();
 
 export const CONFIG = {
-  PORT: process.env.PORT ? parseInt(process.env.PORT, 10) : 5000,
+  PORT: process.env.PORT ? parseInt(process.env.PORT, 10) : 8080,
   NODE_ENV: process.env.NODE_ENV || 'development',
   DATABASE_PATH: process.env.DATABASE_PATH || path.join(process.cwd(), 'data', 'scam_shield.db'),
   ML_SERVICE_URL: process.env.ML_SERVICE_URL || 'http://127.0.0.1:8000',
