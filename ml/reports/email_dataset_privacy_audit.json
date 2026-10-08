@@ -1,0 +1,48 @@
+{
+  "phase": "E.2A",
+  "audit_timestamp": "2026-10-04T04:30:00Z",
+  "privacy_audit_summary": {
+    "status": "PII_RISKS_IDENTIFIED_AND_GOVERNED",
+    "zero_raw_pii_committed": true,
+    "pii_risk_level": "MODERATE_TO_HIGH_IN_RAW_CORPORA"
+  },
+  "dataset_specific_pii_findings": [
+    {
+      "dataset_id": "uci_sms_spam_v1",
+      "pii_types_detected": ["UK/US mobile phone numbers", "Shortcodes (e.g., 88066)", "Personal first names"],
+      "severity": "MEDIUM",
+      "mitigation_protocol": "Replace phone numbers with `<PHONE_NUM>` token, normalize shortcodes to `<SHORTCODE>` token, remove direct subscriber identifiers."
+    },
+    {
+      "dataset_id": "nazario_phishing_corpus_v1",
+      "pii_types_detected": ["Target recipient email addresses in `To:` and `Received:` headers", "Server IP addresses in routing headers", "Victim names in salutations"],
+      "severity": "HIGH",
+      "mitigation_protocol": "Strip full RFC 2822 header envelopes. Extract only email subject and plain text body. Replace email addresses with `<EMAIL_ADDR>` token and URLs with normalized `<URL_LINK>` token."
+    },
+    {
+      "dataset_id": "enron_email_legitimate_v1",
+      "pii_types_detected": ["Historical Enron employee names", "Corporate desk phone numbers", "Internal email aliases (e.g. `jeff.skilling@enron.com`)", "Physical office locations"],
+      "severity": "HIGH",
+      "mitigation_protocol": "Filter signatures and header routing. Anonymize corporate email addresses to `<CORP_EMAIL>` and names with generalized NER masking."
+    },
+    {
+      "dataset_id": "apache_spamassassin_public_v1",
+      "pii_types_detected": ["Mailing list subscriber addresses (e.g. SourceForge, Linux kernel lists)", "PGP signatures", "IP headers"],
+      "severity": "MEDIUM",
+      "mitigation_protocol": "Strip RFC 822 routing headers and mailing list footers. Mask email addresses and PGP signature blocks."
+    },
+    {
+      "dataset_id": "clair_nigerian_fraud_v1",
+      "pii_types_detected": ["Fake sender pseudonyms (e.g., Barrister, Prince)", "Fraudulent intermediary bank account numbers", "Disposable contact numbers"],
+      "severity": "LOW",
+      "mitigation_protocol": "These are fraudulent lure artifacts rather than real victim PII; mask specific phone numbers to `<PHONE_NUM>` to prevent memorization shortcuts."
+    }
+  ],
+  "required_preprocessing_pipeline": [
+    "Step 1: Header stripping — Remove transport headers (Received, Return-Path, Message-ID, DKIM, SPF).",
+    "Step 2: PII Entity Masking — Apply deterministic regex for email addresses, phone numbers, SSNs, credit card numbers, and crypto addresses.",
+    "Step 3: HTML Sanitization — Strip raw markup tags and scripts while extracting anchor text and href targets.",
+    "Step 4: Unicode Normalization — Convert zero-width spaces, homoglyphs, and non-standard whitespace to clean ASCII/UTF-8 strings.",
+    "Step 5: Privacy Hashing — Maintain one-way SHA-256 hashes of raw inputs for provenance verification without storing unmasked personal records."
+  ]
+}

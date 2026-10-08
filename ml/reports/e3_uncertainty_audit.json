@@ -1,0 +1,14 @@
+{
+  "uncertainty_states": {
+    "LOW": "Multiple independent signals confirm assessment, or single high-confidence detector has complete domain coverage.",
+    "MEDIUM": "Conflicting signals between detectors (e.g. low URL risk + high text risk), or single detector on ambiguous input.",
+    "HIGH": "Insufficient data, detector unavailable/failed, empty evidence payload."
+  },
+  "verified_scenarios": {
+    "clean_apna_college_url": "LOW",
+    "phishing_credential_lure": "LOW",
+    "conflicting_social_engineering_with_clean_link": "MEDIUM",
+    "detector_unavailable": "HIGH"
+  },
+  "status": "VERIFIED"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "text-scam-1.0.0",
+  "vectorizer_type": "FeatureUnion",
+  "vocabulary_size": 26708,
+  "word_ngram_range": [
+    1,
+    2
+  ],
+  "char_ngram_range": [
+    3,
+    5
+  ],
+  "sublinear_tf": true,
+  "input_placeholders": [
+    "<URL_LINK>",
+    "<EMAIL>",
+    "<PHONE>",
+    "<CARD>",
+    "<ACCOUNT>",
+    "<IP>",
+    "<TOKEN>"
+  ]
+}

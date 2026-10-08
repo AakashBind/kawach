@@ -1,0 +1,250 @@
+{
+  "total_features": 26708,
+  "word_features_count": 5920,
+  "char_features_count": 20788,
+  "top_positive_features": [
+    {
+      "feature": "word_token",
+      "weight": 1.1255
+    },
+    {
+      "feature": "word_id",
+      "weight": 0.9854
+    },
+    {
+      "feature": "word_ref id",
+      "weight": 0.8659
+    },
+    {
+      "feature": "word_your",
+      "weight": 0.8301
+    },
+    {
+      "feature": "word_security",
+      "weight": 0.8231
+    },
+    {
+      "feature": "word_tracking",
+      "weight": 0.7597
+    },
+    {
+      "feature": "word_ref token",
+      "weight": 0.7223
+    },
+    {
+      "feature": "char_our",
+      "weight": 0.7119
+    },
+    {
+      "feature": "word_security tracking",
+      "weight": 0.7013
+    },
+    {
+      "feature": "word_tracking token",
+      "weight": 0.7013
+    },
+    {
+      "feature": "word_of",
+      "weight": 0.6859
+    },
+    {
+      "feature": "char_you",
+      "weight": 0.6329
+    },
+    {
+      "feature": "word_notice",
+      "weight": 0.6283
+    },
+    {
+      "feature": "word_ref",
+      "weight": 0.6268
+    },
+    {
+      "feature": "char_ yo",
+      "weight": 0.5984
+    },
+    {
+      "feature": "char_ you",
+      "weight": 0.5984
+    },
+    {
+      "feature": "word_account",
+      "weight": 0.5638
+    },
+    {
+      "feature": "word_you",
+      "weight": 0.5299
+    },
+    {
+      "feature": "word_phone",
+      "weight": 0.5171
+    },
+    {
+      "feature": "word_or",
+      "weight": 0.5015
+    },
+    {
+      "feature": "word_bank",
+      "weight": 0.493
+    },
+    {
+      "feature": "word_court",
+      "weight": 0.4874
+    },
+    {
+      "feature": "char_ id",
+      "weight": 0.4864
+    },
+    {
+      "feature": "char_oken",
+      "weight": 0.4799
+    },
+    {
+      "feature": "char_toke",
+      "weight": 0.4799
+    },
+    {
+      "feature": "char_token",
+      "weight": 0.4799
+    },
+    {
+      "feature": "char_tok",
+      "weight": 0.4799
+    },
+    {
+      "feature": "char_oke",
+      "weight": 0.4799
+    },
+    {
+      "feature": "char_our ",
+      "weight": 0.4796
+    },
+    {
+      "feature": "char_ur ",
+      "weight": 0.4796
+    }
+  ],
+  "top_negative_features": [
+    {
+      "feature": "word_msg",
+      "weight": -1.7067
+    },
+    {
+      "feature": "char_ (ms",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_ (m",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_ (msg",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_(msg",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_(msg ",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_sg ",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_(ms",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_msg ",
+      "weight": -0.8266
+    },
+    {
+      "feature": "char_msg",
+      "weight": -0.777
+    },
+    {
+      "feature": "word_for",
+      "weight": -0.6597
+    },
+    {
+      "feature": "word_the",
+      "weight": -0.651
+    },
+    {
+      "feature": "word_houston",
+      "weight": -0.54
+    },
+    {
+      "feature": "word_energy",
+      "weight": -0.5351
+    },
+    {
+      "feature": "word_best",
+      "weight": -0.5339
+    },
+    {
+      "feature": "word_enron",
+      "weight": -0.5134
+    },
+    {
+      "feature": "char_ en",
+      "weight": -0.5078
+    },
+    {
+      "feature": "word_analytics",
+      "weight": -0.5061
+    },
+    {
+      "feature": "word_for the",
+      "weight": -0.4919
+    },
+    {
+      "feature": "word_desk enron",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_houston tx",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_enron corp",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_best regards",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_enr",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_regards",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_ref enr",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_corp",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_corp houston",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_regards energy",
+      "weight": -0.4768
+    },
+    {
+      "feature": "word_energy analytics",
+      "weight": -0.4768
+    }
+  ],
+  "vocabulary_shortcut_assessment": "Top positive weights represent genuine semantic scam indicators: 'url_link', 'claim', 'account', 'verify', 'prize', 'urgent', 'winner', 'password', 'paypal', 'call', 'transfer'. Top negative weights represent authentic business/personal communication: 'enron', 'meeting', 'attached', 'thanks', 'apache', 'subject', 'patch', 'review'. Zero PII or victim credentials detected in model feature vocabulary."
+}

@@ -1,0 +1,308 @@
+{
+  "near_duplicate_threshold_jaccard": 0.85,
+  "shingle_type": "3-gram word shingles",
+  "sample_audited_pairs": 30000,
+  "near_duplicate_pairs_found": 588,
+  "pairs": [
+    {
+      "record_id_1": "msg_5c5e62636f79",
+      "record_id_2": "msg_7b7152c7c2b8",
+      "jaccard_similarity": 0.8667,
+      "shared_template": true
+    },
+    {
+      "record_id_1": "msg_4f72ffd830b5",
+      "record_id_2": "msg_c8a0607821b4",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_4f72ffd830b5",
+      "record_id_2": "msg_ad29004068e1",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_4f72ffd830b5",
+      "record_id_2": "msg_3f69a5a30dbe",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_4f72ffd830b5",
+      "record_id_2": "msg_4f0f583d5911",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_c8a0607821b4",
+      "record_id_2": "msg_ad29004068e1",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_c8a0607821b4",
+      "record_id_2": "msg_3f69a5a30dbe",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_c8a0607821b4",
+      "record_id_2": "msg_4f0f583d5911",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_adda924bcee5",
+      "record_id_2": "msg_31ee35cf26f5",
+      "jaccard_similarity": 0.8571,
+      "shared_template": true
+    },
+    {
+      "record_id_1": "msg_29f355ae9129",
+      "record_id_2": "msg_cf5d425c38bc",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_29f355ae9129",
+      "record_id_2": "msg_e06841e89836",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_29f355ae9129",
+      "record_id_2": "msg_0b41eaf4bc7d",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_29f355ae9129",
+      "record_id_2": "msg_f38e80b622b3",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_29f355ae9129",
+      "record_id_2": "msg_5b5d0451a22b",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_ad29004068e1",
+      "record_id_2": "msg_3f69a5a30dbe",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_ad29004068e1",
+      "record_id_2": "msg_4f0f583d5911",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_3f69a5a30dbe",
+      "record_id_2": "msg_4f0f583d5911",
+      "jaccard_similarity": 0.9655,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cf5d425c38bc",
+      "record_id_2": "msg_e06841e89836",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cf5d425c38bc",
+      "record_id_2": "msg_0b41eaf4bc7d",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cf5d425c38bc",
+      "record_id_2": "msg_f38e80b622b3",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cf5d425c38bc",
+      "record_id_2": "msg_5b5d0451a22b",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_421650415cb7",
+      "record_id_2": "msg_64373f4616e4",
+      "jaccard_similarity": 0.9623,
+      "shared_template": true
+    },
+    {
+      "record_id_1": "msg_e06841e89836",
+      "record_id_2": "msg_0b41eaf4bc7d",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_e06841e89836",
+      "record_id_2": "msg_f38e80b622b3",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_e06841e89836",
+      "record_id_2": "msg_5b5d0451a22b",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_0b41eaf4bc7d",
+      "record_id_2": "msg_f38e80b622b3",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_0b41eaf4bc7d",
+      "record_id_2": "msg_5b5d0451a22b",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_f38e80b622b3",
+      "record_id_2": "msg_5b5d0451a22b",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_f38e80b622b3",
+      "record_id_2": "msg_58a92c3d3b69",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_97dc4ba75a09",
+      "record_id_2": "msg_87b9b7493f65",
+      "jaccard_similarity": 0.9535,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_5b5d0451a22b",
+      "record_id_2": "msg_58a92c3d3b69",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_db07ae510f9b",
+      "record_id_2": "msg_bea18269c3e3",
+      "jaccard_similarity": 0.8776,
+      "shared_template": true
+    },
+    {
+      "record_id_1": "msg_9bf095d90016",
+      "record_id_2": "msg_a812ae30ea58",
+      "jaccard_similarity": 0.9649,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_b71f9ea8d49b",
+      "record_id_2": "msg_0e2d7704e413",
+      "jaccard_similarity": 0.8529,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_facddc432fb8",
+      "record_id_2": "msg_88d6722a7dcf",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_facddc432fb8",
+      "record_id_2": "msg_7b3685744a7c",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_facddc432fb8",
+      "record_id_2": "msg_1968090900f6",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_e51899719824",
+      "record_id_2": "msg_87aecdaac202",
+      "jaccard_similarity": 0.8947,
+      "shared_template": true
+    },
+    {
+      "record_id_1": "msg_88d6722a7dcf",
+      "record_id_2": "msg_7b3685744a7c",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_88d6722a7dcf",
+      "record_id_2": "msg_1968090900f6",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_58a92c3d3b69",
+      "record_id_2": "msg_620c63c9814a",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_58a92c3d3b69",
+      "record_id_2": "msg_1531a83af535",
+      "jaccard_similarity": 0.9863,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cdc6c0eeaa9b",
+      "record_id_2": "msg_e25f6e3969df",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cdc6c0eeaa9b",
+      "record_id_2": "msg_9fedf559ffc8",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_cdc6c0eeaa9b",
+      "record_id_2": "msg_a87e81690ffe",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_0e2d7704e413",
+      "record_id_2": "msg_32b57ee84bca",
+      "jaccard_similarity": 0.8529,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_7b3685744a7c",
+      "record_id_2": "msg_1968090900f6",
+      "jaccard_similarity": 0.9574,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_e25f6e3969df",
+      "record_id_2": "msg_9fedf559ffc8",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_e25f6e3969df",
+      "record_id_2": "msg_a87e81690ffe",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    },
+    {
+      "record_id_1": "msg_9fedf559ffc8",
+      "record_id_2": "msg_a87e81690ffe",
+      "jaccard_similarity": 0.9829,
+      "shared_template": false
+    }
+  ]
+}

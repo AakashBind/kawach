@@ -1,0 +1,7 @@
+{
+  "raw_records_ingested": 23388,
+  "exact_duplicates_removed": 6,
+  "unique_normalized_records": 23382,
+  "duplicate_groups_count": 4,
+  "deduplication_ratio": 0.0003
+}

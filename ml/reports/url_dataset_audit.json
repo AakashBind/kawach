@@ -1,0 +1,33 @@
+{
+  "dataset_name": "url_uci_phiusiil_benchmark_v1",
+  "source": "UCI Machine Learning Repository & Benchmark Archives (ID 327 / 967)",
+  "license": "CC BY 4.0",
+  "retrieval_date": "2026-10-03",
+  "snapshot_hash": "cb7e0eff529a7d932dca56adc8f37c4a5acc840ac2a4ac03f086ba38e9643105",
+  "raw_samples": 7881,
+  "deduplicated_samples": 7881,
+  "final_samples": 7881,
+  "legitimate_count": 1881,
+  "phishing_count": 6000,
+  "class_ratio": {
+    "legitimate_pct": 23.87,
+    "phishing_pct": 76.13
+  },
+  "train_count": 5516,
+  "val_count": 1182,
+  "test_count": 1183,
+  "single_feature_accuracy": {
+    "url_length": 0.9873,
+    "num_digits": 0.9763,
+    "num_hyphens": 0.962,
+    "query_length": 0.7616
+  },
+  "ood_evaluation": {
+    "test_samples": 25,
+    "accuracy": 0.64,
+    "fpr": 0.4667,
+    "fnr": 0.2,
+    "roc_auc": 0.6333
+  },
+  "retraining_readiness": "NOT READY \u2014 DATA QUALITY ISSUE REMAINS (REQUIRES COMPLEX BENIGN DATA EXPANSION)"
+}

@@ -1,0 +1,122 @@
+{
+  "enron_email_legitimate_v1": {
+    "count": 500,
+    "legitimate": 500,
+    "scam": 0,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": NaN,
+      "pr_auc": 0.0,
+      "brier_score": 0.0008,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 500,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 0,
+        "total": 500
+      }
+    }
+  },
+  "uci_sms_spam_v1": {
+    "count": 315,
+    "legitimate": 241,
+    "scam": 74,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "brier_score": 0.0313,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 241,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 74,
+        "total": 315
+      }
+    }
+  },
+  "apache_spamassassin_public_v1": {
+    "count": 1550,
+    "legitimate": 1000,
+    "scam": 550,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "brier_score": 0.0142,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 1000,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 550,
+        "total": 1550
+      }
+    }
+  },
+  "clair_nigerian_fraud_v1": {
+    "count": 481,
+    "legitimate": 0,
+    "scam": 481,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": NaN,
+      "pr_auc": 1.0,
+      "brier_score": 0.0003,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 481,
+        "total": 481
+      }
+    }
+  },
+  "nazario_phishing_corpus_v1": {
+    "count": 554,
+    "legitimate": 0,
+    "scam": 554,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": NaN,
+      "pr_auc": 1.0,
+      "brier_score": 0.0013,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 554,
+        "total": 554
+      }
+    }
+  }
+}

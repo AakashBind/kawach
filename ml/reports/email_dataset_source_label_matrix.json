@@ -1,0 +1,46 @@
+{
+  "sources": {
+    "uci_sms_spam_v1": {
+      "legitimate_0": 4827,
+      "scam_phishing_1": 747,
+      "total": 5574,
+      "modality": "sms"
+    },
+    "nazario_phishing_corpus_v1": {
+      "legitimate_0": 0,
+      "scam_phishing_1": 4576,
+      "total": 4576,
+      "modality": "email"
+    },
+    "enron_email_legitimate_v1": {
+      "legitimate_0": 5000,
+      "scam_phishing_1": 0,
+      "total": 5000,
+      "modality": "email"
+    },
+    "apache_spamassassin_public_v1": {
+      "legitimate_0": 2500,
+      "scam_phishing_1": 1650,
+      "total": 4150,
+      "modality": "email"
+    },
+    "clair_nigerian_fraud_v1": {
+      "legitimate_0": 0,
+      "scam_phishing_1": 4082,
+      "total": 4082,
+      "modality": "email"
+    }
+  },
+  "modalities": {
+    "sms": {
+      "legitimate_0": 4827,
+      "scam_phishing_1": 747,
+      "total": 5574
+    },
+    "email": {
+      "legitimate_0": 7500,
+      "scam_phishing_1": 10308,
+      "total": 17808
+    }
+  }
+}

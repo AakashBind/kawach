@@ -1,0 +1,120 @@
+{
+  "model_id": "text-scam",
+  "model_version": "1.0.0",
+  "version": "1.0.0",
+  "task": "email_message_scam_phishing_classification",
+  "model_family": "TF-IDF (Word + Char N-Grams) + Calibrated Logistic Regression",
+  "training_dataset": "email_message_scam_curated_v2",
+  "dataset_version": "email_message_scam_curated_v2",
+  "training_dataset_hash": "ea611e2d8cfeda94e31ae7aee32de592de07adce4b66ddc7bf807c5a5b74457e",
+  "validation_dataset_hash": "672c7d655341d8351a94a1662c23a3f40fe9b5de35616e6ee535677ffc84857e",
+  "frozen_test_dataset_hash": "3c41942fd7bee1c6c936040a6ffafdf254a1faa1d73a7c49ca948a58c74fb988",
+  "feature_representation": "FeatureUnion(Word-Tfidf(1,2), Char-Tfidf(3,5))",
+  "classes": [
+    "legitimate",
+    "scam_phishing"
+  ],
+  "calibration": "Logistic Sigmoid",
+  "threshold": 0.2,
+  "training_seed": 42,
+  "artifact_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+  "artifact_hash": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+  "vectorizer_sha256": "82dec31d11037ea219d430027341f3988792c55c4c97b93a9328a858962bd95e",
+  "training_timestamp": "2026-10-04T04:45:00Z",
+  "status": "production_candidate",
+  "validation_metrics": {
+    "threshold": 0.5,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0053,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "true_negative_rate": 1.0,
+    "confusion_matrix": {
+      "true_negatives": 1825,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 1658,
+      "total": 3483
+    }
+  },
+  "frozen_test_metrics": {
+    "threshold": 0.2,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0097,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "true_negative_rate": 1.0,
+    "confusion_matrix": {
+      "true_negatives": 1741,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 1659,
+      "total": 3400
+    }
+  },
+  "modality_breakdown": {
+    "email": {
+      "count": 3085,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 1500,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 1585,
+        "total": 3085
+      }
+    },
+    "sms": {
+      "count": 315,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 241,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "true_positives": 74,
+        "total": 315
+      }
+    }
+  },
+  "ood_metrics": {
+    "threshold": 0.2,
+    "accuracy": 0.3333,
+    "precision": 0.2727,
+    "recall": 1.0,
+    "f1_score": 0.4286,
+    "roc_auc": 0.8212,
+    "pr_auc": 0.5869,
+    "brier_score": 0.1519,
+    "false_positive_rate": 0.8889,
+    "false_negative_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "true_negative_rate": 0.1111,
+    "confusion_matrix": {
+      "true_negatives": 500,
+      "false_positives": 4000,
+      "false_negatives": 0,
+      "true_positives": 1500,
+      "total": 6000
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "phase": "E.4",
+  "regression_verification": {
+    "url_scanner_endpoint": {
+      "endpoint": "POST /api/v1/scans/url",
+      "is_passive": true,
+      "makes_network_calls": false,
+      "apna_college_start_result": "Score 2/100, LOW RISK, P(phishing)=0.0007 (PASSED)",
+      "apna_college_deep_player_result": "Score 2/100, LOW RISK, P(phishing)=0.000672 (PASSED)",
+      "phishing_lure_result": "Score 95/100, CRITICAL RISK, P(phishing)=0.9998 (PASSED)"
+    },
+    "message_scanner_endpoint": {
+      "endpoint": "POST /api/v1/scans/message",
+      "legitimate_otp_notice": "LOW RISK (PASSED)",
+      "account_suspension_threat": "CRITICAL RISK (PASSED)"
+    },
+    "multi_modal_15_scenarios": "15/15 PASSED",
+    "backend_total_tests": "46/46 PASSED across 6 test suites",
+    "python_total_tests": "58/58 PASSED"
+  },
+  "regression_status": "ZERO_REGRESSIONS"
+}

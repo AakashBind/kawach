@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Banking Statement vs Credential Theft",
+    "legitimate_sample": "Your monthly e-Statement for account ending in 4912 is now available in your online banking portal. Log in via our official mobile app to review.",
+    "legitimate_probability": 0.30624238821726124,
+    "legitimate_predicted_class": "legitimate",
+    "legitimate_passed": true,
+    "scam_sample": "URGENT SECURITY ALERT: Your bank account ending in 4912 has been frozen. You must verify your login password and SSN immediately at http://secure-banking-auth.com to prevent permanent termination.",
+    "scam_probability": 0.9804267451920873,
+    "scam_predicted_class": "scam",
+    "scam_passed": true,
+    "pair_passed": true
+  },
+  {
+    "category": "OTP Legitimate vs OTP Theft",
+    "legitimate_sample": "Your one-time verification code is 492810. This code expires in 5 minutes. Do not share this code with anyone, including our support representatives.",
+    "legitimate_probability": 0.02973079526352692,
+    "legitimate_predicted_class": "legitimate",
+    "legitimate_passed": true,
+    "scam_sample": "BANK FRAUD ALERT: Unauthorized charge of $850.00 detected. Reply with the one-time code sent to your mobile phone immediately to reverse this fraudulent transaction.",
+    "scam_probability": 0.9635665149500647,
+    "scam_predicted_class": "scam",
+    "scam_passed": true,
+    "pair_passed": true
+  },
+  {
+    "category": "Package Delivery Update vs Fake Redelivery Fee",
+    "legitimate_sample": "Your package with tracking number 9400111899562537618290 has been dispatched. Track your parcel status through the official courier website.",
+    "legitimate_probability": 0.17569244191075326,
+    "legitimate_predicted_class": "legitimate",
+    "legitimate_passed": true,
+    "scam_sample": "USPS: We attempted delivery of your parcel today but an unpaid customs fee of $2.99 is outstanding. Click http://usps-redelivery-fee.com to pay now or package will be returned to sender.",
+    "scam_probability": 0.879021310264032,
+    "scam_predicted_class": "scam",
+    "scam_passed": true,
+    "pair_passed": true
+  },
+  {
+    "category": "Customer Support vs Support Impersonation",
+    "legitimate_sample": "Thank you for contacting customer support. Your ticket #48291 has been resolved. If you have further inquiries, feel free to reply directly to this email.",
+    "legitimate_probability": 0.2034168388511213,
+    "legitimate_predicted_class": "legitimate",
+    "legitimate_passed": true,
+    "scam_sample": "MICROSOFT TECH SUPPORT: Critical Trojan spyware detected on your computer. Call our toll-free hotline +1-800-555-0199 immediately to allow an engineer to clean your machine.",
+    "scam_probability": 0.696594771788348,
+    "scam_predicted_class": "scam",
+    "scam_passed": true,
+    "pair_passed": true
+  },
+  {
+    "category": "Workplace Urgent Request vs CEO Wire Fraud",
+    "legitimate_sample": "Hi Sarah, could you please review the Q3 budget spreadsheet attached and send me your comments by 4 PM today? Thanks, Mark.",
+    "legitimate_probability": 0.015411472706672313,
+    "legitimate_predicted_class": "legitimate",
+    "legitimate_passed": true,
+    "scam_sample": "Hi Sarah, I am in a confidential acquisition meeting and cannot take calls. I need you to initiate an urgent vendor wire transfer of $45,000 immediately. Send confirmation once processed.",
+    "scam_probability": 0.775530386961727,
+    "scam_predicted_class": "scam",
+    "scam_passed": true,
+    "pair_passed": true
+  }
+]

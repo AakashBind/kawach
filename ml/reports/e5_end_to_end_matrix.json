@@ -1,0 +1,57 @@
+{
+  "phase": "E.5",
+  "total_matrix_scenarios": 40,
+  "results": {
+    "url_scenarios": {
+      "1_legitimate_simple_url": "PASS (Apna College root -> Score 2/100, LOW RISK)",
+      "2_legitimate_complex_url": "PASS (GitHub commit -> Score 2/100, LOW RISK)",
+      "3_legitimate_deep_route": "PASS (Apna College LMS player -> Score 2/100, LOW RISK)",
+      "4_suspicious_phishing_url": "PASS (Paypal security lure -> Score 95/100, CRITICAL RISK)",
+      "5_ip_based_phishing_url": "PASS (Raw IP host -> Evidence url.host.ip_address extracted)",
+      "6_malformed_url": "PASS (Empty string -> HTTP 400 Validation Error)",
+      "7_unsupported_protocol": "PASS (gopher:// -> Safely handled without crash)",
+      "8_excessively_long_url": "PASS (>2048 chars -> HTTP 400 Rejected)"
+    },
+    "message_scenarios": {
+      "9_legitimate_email": "PASS (Team newsletter -> LOW RISK)",
+      "10_legitimate_sms": "PASS (OTP notice -> LOW RISK)",
+      "11_scam_message": "PASS (Lottery prize -> HIGH/CRITICAL RISK)",
+      "12_phishing_message": "PASS (Account suspension threat -> HIGH/CRITICAL RISK)",
+      "13_message_with_legit_url": "PASS (Extracts & evaluates embedded URL safely)",
+      "14_message_with_phishing_url": "PASS (Flags critical threat driven by embedded URL ML)",
+      "15_message_with_multiple_urls": "PASS (Independently scans all embedded URLs)",
+      "16_empty_message": "PASS (HTTP 400 Validation Error)",
+      "17_malformed_request": "PASS (HTTP 400 Validation Error)"
+    },
+    "qr_scenarios": {
+      "18_legitimate_url_qr": "PASS (Decodes URL -> Passes to URL detector)",
+      "19_phishing_url_qr": "PASS (Decodes URL -> Flags critical threat)",
+      "20_non_url_payload": "PASS (Decodes text -> Handles without artificial URL ML claims)",
+      "21_unreadable_qr": "PASS (HTTP 422 QR_DECODE_FAILED)",
+      "22_malformed_image": "PASS (HTTP 400/422 Controlled Error)",
+      "23_oversized_image": "PASS (Upload middleware enforces 5MB limit)"
+    },
+    "website_scenarios": {
+      "24_legitimate_page": "PASS (Clean DOM -> LOW RISK)",
+      "25_legitimate_login": "PASS (Same-origin form -> Informative evidence, not phishing)",
+      "26_legitimate_payment": "PASS (Standard checkout -> Clean evidence)",
+      "27_suspicious_credential_harvesting": "PASS (External exfiltration -> CRITICAL RISK)",
+      "28_external_form_action": "PASS (Action mismatch -> CRITICAL evidence)",
+      "29_brand_domain_mismatch": "PASS (Claims PayPal on attacker.com -> CRITICAL Brand Impersonation)",
+      "30_redirect_chain": "PASS (Follows up to 3 hops safely)",
+      "31_redirect_to_private_ip": "PASS (SSRF validator blocks hop 2 immediately)",
+      "32_timeout_page": "PASS (Timeout handled gracefully, limitation documented in explanation)",
+      "33_malformed_html": "PASS (Cheerio static AST parses resiliently)",
+      "34_unsupported_content_type": "PASS (Rejects non-HTML stream before download)"
+    },
+    "multi_detector_scenarios": {
+      "35_low_url_suspicious_page": "PASS (Website evidence elevates risk to CRITICAL)",
+      "36_suspicious_url_benign_page": "PASS (URL ML evidence preserved, not erased)",
+      "37_message_phishing_url": "PASS (Text + URL evidence combined)",
+      "38_qr_phishing_url": "PASS (QR payload routed to URL detector)",
+      "39_website_url_disagreement": "PASS (Structured multi-signal arbitration)",
+      "40_detector_partial_failure": "PASS (Elevates uncertainty to HIGH, documents limitation)"
+    }
+  },
+  "verdict": "ALL_40_SCENARIOS_VERIFIED_PASS"
+}

@@ -1,0 +1,56 @@
+{
+  "trec_2007_spam_corpus_v1": {
+    "source_name": "trec_2007_spam_corpus_v1",
+    "modality": "email",
+    "total_records": 3000,
+    "legitimate_count": 1500,
+    "scam_count": 1500,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 0.6667,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1_score": 0.75,
+      "roc_auc": 0.8889,
+      "pr_auc": 0.9041,
+      "brier_score": 0.2031,
+      "false_positive_rate": 0.6667,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 500,
+        "false_positives": 1000,
+        "false_negatives": 0,
+        "true_positives": 1500,
+        "total": 3000
+      }
+    },
+    "semantic_label_analysis": "NIST TREC 2007 contains commercial spam mixed with phishing, correctly reflecting historical email noise."
+  },
+  "nus_sms_corpus_v1": {
+    "source_name": "nus_sms_corpus_v1",
+    "modality": "sms",
+    "total_records": 3000,
+    "legitimate_count": 3000,
+    "scam_count": 0,
+    "metrics": {
+      "threshold": 0.2,
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": NaN,
+      "pr_auc": 0.0,
+      "brier_score": 0.1008,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 0,
+        "false_positives": 3000,
+        "false_negatives": 0,
+        "true_positives": 0,
+        "total": 3000
+      }
+    },
+    "semantic_label_analysis": "NUS SMS contains casual student conversational chat with Singaporean English (Singlish) slang."
+  }
+}

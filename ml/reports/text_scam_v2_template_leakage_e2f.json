@@ -1,0 +1,8 @@
+{
+  "train_template_count": 6181,
+  "ood_template_count": 14,
+  "test_template_count": 1050,
+  "train_vs_ood_template_overlap": 0,
+  "train_vs_test_template_overlap": 0,
+  "template_leakage_status": "ZERO_LEAKAGE"
+}

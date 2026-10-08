@@ -1,0 +1,22 @@
+{
+  "phase": "E.5",
+  "ssrf_regression_tests": [
+    { "target": "http://127.0.0.1:8080/admin", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://localhost:3000", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://169.254.169.254/latest/meta-data/", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://metadata.google.internal/computeMetadata/v1/", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://10.0.0.1/internal", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://172.16.0.1/internal", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://192.168.1.1/router", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://[::1]:8080/debug", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://[fc00::1]/service", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://2130706433/decimal-loopback", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://0x7f000001/hex-loopback", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "file:///etc/passwd", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "gopher://127.0.0.1:6379/_INFO", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "ftp://ftp.internal.lan/backup", "expected": "BLOCKED", "actual": "BLOCKED", "status": "PASS" },
+    { "target": "http://public-redirect-to-metadata.com", "expected": "BLOCKED_ON_HOP_2", "actual": "BLOCKED_ON_HOP_2", "status": "PASS" },
+    { "target": "https://apnacollege.in", "expected": "ALLOWED", "actual": "ALLOWED", "status": "PASS" }
+  ],
+  "verdict": "SSRF_REGRESSION_100_PERCENT_PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "raw_record_count": 21430,
+  "deduplicated_count": 20308,
+  "duplicate_count": 1122,
+  "conflict_count": 0,
+  "normalization_applied": [
+    "lowercase_scheme_host",
+    "trailing_slash_normalization",
+    "rfc3986_validation"
+  ]
+}

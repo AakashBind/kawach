@@ -1,0 +1,10 @@
+{
+  "training_normalization_version": "v1.0.0",
+  "inference_normalization_version": "v1.0.0",
+  "unicode_normalization": "NFKC",
+  "pii_masking_applied": true,
+  "url_tokenization": "<URL_LINK>",
+  "html_entity_decoding": true,
+  "html_tag_stripping": true,
+  "parity_status": "EXACT_PARITY_CONFIRMED"
+}

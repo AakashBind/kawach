@@ -1,0 +1,9 @@
+{
+  "primary_language": "English (en)",
+  "english_first_scope": true,
+  "language_distribution": {
+    "en": 23382
+  },
+  "multilingual_claim": false,
+  "notes": "Corpus scoped as English-first. Non-English and Singlish tokens preserved in OOD benchmark."
+}

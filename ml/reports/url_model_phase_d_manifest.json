@@ -1,0 +1,9 @@
+{
+  "phase": "Phase D",
+  "created_at": "2026-10-03T19:46:11.268239+00:00",
+  "selected_model": "candidate_5_xgboost",
+  "v2_artifact_path": "ml/models/url_phishing/v2.0.0/model.joblib",
+  "v2_artifact_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+  "v1_baseline_preserved": true,
+  "v1_baseline_sha256": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49"
+}

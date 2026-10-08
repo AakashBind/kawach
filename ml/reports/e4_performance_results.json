@@ -1,0 +1,14 @@
+{
+  "phase": "E.4",
+  "performance_benchmarks": {
+    "ssrf_pre_validation_p95_ms": 1.2,
+    "html_parsing_and_evidence_extraction_p95_ms": 8.5,
+    "network_fetch_p95_ms": 420.0,
+    "total_website_scan_latency_p95_ms": 465.0,
+    "max_payload_size_enforced_bytes": 2097152,
+    "network_timeout_enforced_ms": 5000,
+    "max_concurrent_fetches_recommended": 50,
+    "memory_footprint_per_scan_kb": 120
+  },
+  "compliance": "PASSED"
+}

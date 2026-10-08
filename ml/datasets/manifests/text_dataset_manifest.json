@@ -1,0 +1,17 @@
+{
+  "dataset_id": "sms_spam_phishing_corpus_v1",
+  "source_name": "UCI SMS Spam Collection & Phishing Email Benchmark",
+  "source_url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+  "license": "CC BY 4.0",
+  "access_date": "2026-10-03",
+  "raw_snapshot_hash": "824bd4448010be8f8ede339f17ad15f1ce6de1a8a2b68f298e59d99bcfb1171c",
+  "total_records_raw": 5600,
+  "split_strategy": "Stratified 70/15/15 (train/val/frozen_test)",
+  "train_count": 3920,
+  "val_count": 840,
+  "test_count": 840,
+  "class_distribution": {
+    "legitimate_ham_0": 3000,
+    "scam_phishing_1": 2600
+  }
+}

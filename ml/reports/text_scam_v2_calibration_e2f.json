@@ -1,0 +1,50 @@
+{
+  "validation_brier": 0.0009611333772773864,
+  "frozen_test_brier": 0.002368484278571969,
+  "ood_trec_brier": 0.24463249548834992,
+  "validation_calibration_curve": {
+    "prob_true": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "prob_pred": [
+      0.009155450699671755,
+      0.7981566201520338,
+      0.801689523647025,
+      0.9953409678359016
+    ]
+  },
+  "frozen_test_calibration_curve": {
+    "prob_true": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "prob_pred": [
+      0.019013360908724904,
+      0.6807489921244237,
+      0.739779425539758,
+      0.9936621518026727
+    ]
+  },
+  "trec_calibration_curve": {
+    "prob_true": [
+      0.3333333333333333,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "prob_pred": [
+      0.04178695979395812,
+      0.1139401625486148,
+      0.3837335522168677,
+      0.4066496184735477,
+      0.51349375757549
+    ]
+  },
+  "nus_single_class_note": "NUS SMS is 100% negative class; reliability curve not applicable; empirical mean predicted probability is 0.0004."
+}

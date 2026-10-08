@@ -1,0 +1,46 @@
+{
+  "scenario_a_apna_college_deep_url": {
+    "url": "https://www.apnacollege.in/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit",
+    "risk_level": "LOW",
+    "risk_score": 2,
+    "calibrated_probability": 0.000672,
+    "status": "PASSED_NO_REGRESSION"
+  },
+  "scenario_b_phishing_url": {
+    "url": "http://paypal-verification@secure-login-update.net/auth",
+    "risk_level": "CRITICAL",
+    "risk_score": 92,
+    "calibrated_probability": 0.9854,
+    "status": "PASSED"
+  },
+  "scenario_c_legitimate_message": {
+    "risk_level": "LOW",
+    "calibrated_probability": 0.0297,
+    "status": "PASSED"
+  },
+  "scenario_d_scam_message": {
+    "risk_level": "CRITICAL",
+    "calibrated_probability": 0.9635,
+    "status": "PASSED"
+  },
+  "scenario_e_qr_legitimate": {
+    "payload_type": "url",
+    "risk_level": "LOW",
+    "status": "PASSED"
+  },
+  "scenario_f_qr_phishing": {
+    "payload_type": "url",
+    "risk_level": "CRITICAL",
+    "status": "PASSED"
+  },
+  "scenario_g_confirming_multimodal": {
+    "risk_level": "CRITICAL",
+    "uncertainty": "LOW",
+    "status": "PASSED"
+  },
+  "scenario_h_conflicting_multimodal": {
+    "risk_level": "HIGH",
+    "uncertainty": "MEDIUM",
+    "status": "PASSED"
+  }
+}

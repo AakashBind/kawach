@@ -1,0 +1,80 @@
+[
+  {
+    "category": "Legitimate Simple",
+    "url": "https://www.apnacollege.in/start",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "legitimate",
+    "score": 0.000672,
+    "raw_score": 4.8e-05,
+    "calibrated_probability": 0.000672,
+    "feature_extraction_time_ms": 0.109,
+    "model_inference_time_ms": 15.234,
+    "total_api_time_ms": 34.3
+  },
+  {
+    "category": "Legitimate Complex Player",
+    "url": "https://www.apnacollege.in/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "legitimate",
+    "score": 0.000672,
+    "raw_score": 3.6e-05,
+    "calibrated_probability": 0.000672,
+    "feature_extraction_time_ms": 0.12,
+    "model_inference_time_ms": 5.093,
+    "total_api_time_ms": 9.69
+  },
+  {
+    "category": "Phishing PayPal Lure",
+    "url": "http://paypal-account-verification-alert99.tk/login.php",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "phishing",
+    "score": 0.99909,
+    "raw_score": 0.972858,
+    "calibrated_probability": 0.99909,
+    "feature_extraction_time_ms": 0.116,
+    "model_inference_time_ms": 5.147,
+    "total_api_time_ms": 9.38
+  },
+  {
+    "category": "Phishing IP Host",
+    "url": "http://192.168.1.1/admin",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "phishing",
+    "score": 0.999316,
+    "raw_score": 0.992315,
+    "calibrated_probability": 0.999316,
+    "feature_extraction_time_ms": 0.09,
+    "model_inference_time_ms": 5.156,
+    "total_api_time_ms": 9.17
+  },
+  {
+    "category": "Benign Domain",
+    "url": "https://www.google.com/search?q=cybersecurity+defense",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "legitimate",
+    "score": 0.000685,
+    "raw_score": 0.001273,
+    "calibrated_probability": 0.000685,
+    "feature_extraction_time_ms": 0.114,
+    "model_inference_time_ms": 6.159,
+    "total_api_time_ms": 10.89
+  },
+  {
+    "category": "Phishing Subdomain Lure",
+    "url": "http://bankofamerica-secure-login-update.top/auth.php?id=99281",
+    "status_code": 200,
+    "model_version": "2.0.0",
+    "predicted_class": "phishing",
+    "score": 0.999387,
+    "raw_score": 0.999747,
+    "calibrated_probability": 0.999387,
+    "feature_extraction_time_ms": 0.139,
+    "model_inference_time_ms": 5.94,
+    "total_api_time_ms": 11.05
+  }
+]

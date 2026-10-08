@@ -1,0 +1,87 @@
+{
+  "model_id": "url-phishing",
+  "version": "2.0.0",
+  "task": "binary_url_phishing_classification",
+  "classes": {
+    "0": "legitimate",
+    "1": "phishing"
+  },
+  "dataset": "url_phishing_curated_v2",
+  "dataset_version": "url_phishing_curated_v2",
+  "dataset_hash": "8b861cd2157ee8d6e0d18e7fe405b1b19178702c5799724d01da4b60ca172d30",
+  "feature_schema_version": "2.0.0",
+  "preprocessing_version": "url-features-v2.0.0",
+  "training_timestamp": "2026-10-03T19:46:11.248904+00:00",
+  "random_seed": 42,
+  "algorithm": "XGBoost + Platt/Sigmoid Probability Calibration",
+  "hyperparameters": {
+    "n_estimators": 150,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "calibration_method": "sigmoid"
+  },
+  "artifact_hash": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+  "operating_threshold": 0.5,
+  "validation_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0001,
+    "confusion_matrix": {
+      "tn": 1595,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 304.94,
+    "infer_latency_ms_per_100": 0.1015,
+    "model_type": "Gradient Boosted Tree",
+    "name": "XGBoost Classifier (150 estimators, max_depth=6, lr=0.1)"
+  },
+  "frozen_test_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0,
+    "confusion_matrix": {
+      "true_negatives": 1597,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 1452,
+      "tn": 1597,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1452
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "single_url_infer_latency_ms": 0.001
+  },
+  "ood_metrics": {
+    "accuracy": 0.95,
+    "precision": 1.0,
+    "recall": 0.8571,
+    "f1": 0.9231,
+    "roc_auc": 0.978,
+    "pr_auc": 0.9683,
+    "brier_score": 0.0499,
+    "confusion_matrix": {
+      "tn": 13,
+      "fp": 0,
+      "fn": 1,
+      "tp": 6
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.1429
+  }
+}

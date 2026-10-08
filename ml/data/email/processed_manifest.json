@@ -1,0 +1,41 @@
+{
+  "dataset_name": "email_message_scam_curated_v2",
+  "version": "2.0.0",
+  "created_at": "2026-10-04T04:45:00Z",
+  "governance": {
+    "phase": "E.2B",
+    "models_trained": 0,
+    "synthetic_records_created": 0,
+    "url_model_retrained": 0,
+    "url_model_modified": false,
+    "url_v1_sha256": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+    "url_v2_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+    "risk_engine_modified": false
+  },
+  "raw_records_ingested": 23388,
+  "records_after_cleaning": 23382,
+  "exact_duplicates_removed": 6,
+  "near_duplicate_pairs": 588,
+  "unique_templates": 8708,
+  "split_counts": {
+    "train": 16499,
+    "validation": 3483,
+    "frozen_test": 3400,
+    "ood": 6000
+  },
+  "class_counts": {
+    "legitimate_0": 12327,
+    "scam_phishing_1": 11055
+  },
+  "modality_counts": {
+    "email": 17808,
+    "sms": 5574
+  },
+  "file_hashes": {
+    "email_train_csv": "ea611e2d8cfeda94e31ae7aee32de592de07adce4b66ddc7bf807c5a5b74457e",
+    "email_val_csv": "672c7d655341d8351a94a1662c23a3f40fe9b5de35616e6ee535677ffc84857e",
+    "email_test_frozen_csv": "3c41942fd7bee1c6c936040a6ffafdf254a1faa1d73a7c49ca948a58c74fb988",
+    "email_ood_benchmark_csv": "097b924ce3d37f55d27413c8fa40a32bd7c898681ec4d965bb6972dfd49a3a87"
+  },
+  "readiness_verdict": "READY_FOR_E2C"
+}

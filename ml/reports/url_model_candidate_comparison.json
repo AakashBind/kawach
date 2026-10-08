@@ -1,0 +1,128 @@
+{
+  "candidate_1_lr_unscaled": {
+    "accuracy": 0.9997,
+    "precision": 0.9993,
+    "recall": 1.0,
+    "f1": 0.9997,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0003,
+    "confusion_matrix": {
+      "tn": 1594,
+      "fp": 1,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0006,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 139.12,
+    "infer_latency_ms_per_100": 0.0199,
+    "model_type": "Linear",
+    "name": "Logistic Regression (Unscaled Baseline Architecture)"
+  },
+  "candidate_2_lr_standard_scaled": {
+    "accuracy": 0.9997,
+    "precision": 0.9993,
+    "recall": 1.0,
+    "f1": 0.9997,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0001,
+    "confusion_matrix": {
+      "tn": 1594,
+      "fp": 1,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0006,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 19.08,
+    "infer_latency_ms_per_100": 0.0328,
+    "model_type": "Linear",
+    "name": "Logistic Regression + StandardScaler"
+  },
+  "candidate_3_lr_robust_scaled": {
+    "accuracy": 0.9997,
+    "precision": 0.9993,
+    "recall": 1.0,
+    "f1": 0.9997,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0002,
+    "confusion_matrix": {
+      "tn": 1594,
+      "fp": 1,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0006,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 29.12,
+    "infer_latency_ms_per_100": 0.0454,
+    "model_type": "Linear",
+    "name": "Logistic Regression + RobustScaler"
+  },
+  "candidate_4_decision_tree": {
+    "accuracy": 0.9997,
+    "precision": 1.0,
+    "recall": 0.9993,
+    "f1": 0.9997,
+    "roc_auc": 0.9997,
+    "pr_auc": 0.9996,
+    "brier_score": 0.0003,
+    "confusion_matrix": {
+      "tn": 1595,
+      "fp": 0,
+      "fn": 1,
+      "tp": 1449
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0007,
+    "fit_time_ms": 39.25,
+    "infer_latency_ms_per_100": 0.0155,
+    "model_type": "Decision Tree",
+    "name": "Decision Tree Classifier (max_depth=12, min_samples_leaf=2)"
+  },
+  "candidate_5_xgboost": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0001,
+    "confusion_matrix": {
+      "tn": 1595,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 304.94,
+    "infer_latency_ms_per_100": 0.1015,
+    "model_type": "Gradient Boosted Tree",
+    "name": "XGBoost Classifier (150 estimators, max_depth=6, lr=0.1)"
+  },
+  "candidate_6_mlp_neural_network": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "brier_score": 0.0,
+    "confusion_matrix": {
+      "tn": 1595,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1450
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "fit_time_ms": 792.11,
+    "infer_latency_ms_per_100": 0.0792,
+    "model_type": "Neural Network",
+    "name": "Multi-Layer Perceptron (MLP 64x32 + StandardScaler)"
+  }
+}

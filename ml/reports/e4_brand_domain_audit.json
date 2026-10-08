@@ -1,0 +1,26 @@
+{
+  "phase": "E.4",
+  "brand_domain_analysis": {
+    "protected_brands_monitored": [
+      { "brand": "PayPal", "legitimate_domains": ["paypal.com", "paypal-community.com"] },
+      { "brand": "Google", "legitimate_domains": ["google.com", "accounts.google.com", "gmail.com"] },
+      { "brand": "Microsoft", "legitimate_domains": ["microsoft.com", "live.com", "office.com", "outlook.com"] },
+      { "brand": "Apple", "legitimate_domains": ["apple.com", "icloud.com"] },
+      { "brand": "Amazon", "legitimate_domains": ["amazon.com", "aws.amazon.com"] },
+      { "brand": "Netflix", "legitimate_domains": ["netflix.com"] },
+      { "brand": "Facebook / Meta", "legitimate_domains": ["facebook.com", "meta.com", "instagram.com"] },
+      { "brand": "State Bank of India (SBI)", "legitimate_domains": ["onlinesbi.com", "sbi.co.in"] },
+      { "brand": "HDFC Bank", "legitimate_domains": ["hdfcbank.com"] },
+      { "brand": "ICICI Bank", "legitimate_domains": ["icicibank.com"] },
+      { "brand": "Apna College", "legitimate_domains": ["apnacollege.in"] }
+    ],
+    "brand_spoofing_detection_logic": "Extracts text/title mentions of high-value brands, extracts destination registrable domain, checks if registrable domain matches legitimate brand domains. If mismatch detected and credential inputs present -> CRITICAL evidence.",
+    "subdomain_impersonation_detection": "Detects patterns where brand name is placed in subdomain on an attacker-owned domain (e.g., paypal.com.account-verify.info)"
+  },
+  "scenarios_tested": {
+    "benign_brand_page_apnacollege": "PASSED - Registrable domain matches brand; NO mismatch flagged",
+    "benign_brand_page_google": "PASSED - Registrable domain matches brand; NO mismatch flagged",
+    "spoofed_brand_page_paypal_on_attacker_domain": "PASSED - Mentions PayPal brand, domain attacker.com -> CRITICAL Brand Impersonation flagged"
+  },
+  "verification": "PASSED"
+}

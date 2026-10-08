@@ -1,0 +1,22 @@
+{
+  "model_id": "text-scam",
+  "model_version": "2.0.0",
+  "model_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+  "vectorizer_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+  "threshold": 0.5,
+  "model_load_time_seconds": 0.1539931297302246,
+  "sample_count": 1000,
+  "mean_latency_ms": 1.358004900004289,
+  "median_latency_ms": 1.2914500000533735,
+  "p95_latency_ms": 1.553294999916943,
+  "p99_latency_ms": 2.8566669998826897,
+  "throughput_samples_per_sec": 736.3743680135776,
+  "pipeline_stages_verified": [
+    "raw_text_input",
+    "unicode_nfkc_normalization",
+    "pii_masking_parity",
+    "v2_vectorizer_tfidf_extraction",
+    "v2_logistic_regression_prediction",
+    "decision_threshold_0.50"
+  ]
+}

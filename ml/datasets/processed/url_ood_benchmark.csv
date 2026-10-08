@@ -1,0 +1,21 @@
+url,label,source_category,notes
+https://www.apnacollege.in/start,0,OOD_LMS_ApnaCollege_Start,Legitimate root start portal
+https://www.apnacollege.in/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit,0,OOD_LMS_ApnaCollege_PathPlayer,Legitimate deep LMS path player with MongoDB ObjectID unit
+https://online.stanford.edu/courses/soe-ycs0001/unit-player?unit=609aef82b3d11a0017c38ef1,0,OOD_LMS_Stanford_UnitPlayer,Stanford Online unit player with 24-char ObjectID
+https://www.coursera.org/learn/algorithms-part1/lecture/5tG89/binary-search-trees?unit=64b1f8c0e4b0c72199f1a23e,0,OOD_LMS_Coursera_Lecture,Coursera lecture with ObjectID query parameter
+https://nptel.ac.in/courses/106/105/106105183/player.php?courseid=cs-106&unit=61e7a2b9049c4d0016a5ef41Unit,0,OOD_LMS_NPTEL_India,NPTEL India player with unit ID
+https://swayam.gov.in/nc_details/NPTEL?course_code=noc26-cs12&unit_id=65df891c33b7a10018e219ba,0,OOD_Gov_LMS_Swayam,Indian Govt Swayam LMS with course code and unit ID
+https://github.com/torvalds/linux/commit/80327f3630a826e7a2d4ef0a75d5032b4b445398,0,OOD_Dev_Git_Commit,Linux kernel 40-char SHA1 commit hash
+https://gitlab.com/gitlab-org/gitlab/-/merge_requests/12345/diffs?view=inline&w=0#68dbea2c4069da29a90e18bf,0,OOD_Dev_GitLab_MR,GitLab merge request with fragment hash
+https://jira.atlassian.com/browse/CONFSERVER-59896?focusedCommentId=1984210&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1984210,0,OOD_SaaS_Jira_Ticket,Complex Jira ticket with percent encoding and long parameters
+https://www.amazon.in/gp/product/B08N5WRWNW/ref=ox_sc_act_title_1?smid=A2380W805H1VHI&psc=1&uuid=68dbea2c-4069-da29-a90e-18bf00000000,0,OOD_Commerce_Amazon_Deep,"Amazon India product with ASIN, merchant ID and tracking UUID"
+https://www.flipkart.com/search?q=laptops&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.brand%255B%255D%3DHP,0,OOD_Commerce_Flipkart_Filter,Flipkart search with nested encoded facet filters
+https://retail.onlinesbi.sbi/retail/login.htm?service_id=retail_core&auth_session=89327491028391823901,0,OOD_Banking_SBI_Official,Official State Bank of India retail login portal
+https://incometax.gov.in/iec/foportal/login?redirect_url=https%3A%2F%2Feportal.incometax.gov.in%2Fiec%2Ffoservices%2F%23%2Fdashboard,0,OOD_Gov_IncomeTax_India,Indian Govt Income Tax e-filing portal
+https://apnacollege-course-access.xyz/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit,1,OOD_Phishing_Brand_Spoof_ApnaCollege,Typosquat/impersonation mimicking Apna College path player on .xyz
+http://192.241.168.42:8080/apnacollege/login.php?session=68dbea2c4069da29a90e18bf,1,OOD_Phishing_IP_ApnaCollege_Spoof,IP host phishing pretending to be LMS login
+https://login.microsoftonline.account-verify-2026.click/oauth2/authorize?client_id=4328904832&state=68dbea2c4069da29a90e18bfUnit,1,OOD_Phishing_OAuth_Spoof,Phishing simulating Microsoft OAuth callback
+http://chase.com.security-alert-customer.net/signin?token=68dbea2c4069da29a90e18bfUnit&redirect=account,1,OOD_Phishing_Subdomain_Chase,Subdomain brand spoofing with embedded token
+https://wallet-metamask-security-reauth.work/recovery?seed_id=68dbea2c4069da29a90e18bfUnit,1,OOD_Phishing_Crypto_Wallet,Crypto wallet seed recovery phishing on .work TLD
+http://185.220.101.5/dhl-package/track.php?awb=68dbea2c4069da29a90e18bfUnit&delivery=hold,1,OOD_Phishing_Delivery_Scam,Delivery fee scam on IP host
+https://sbi-card-kyc-update-portal.top/netbanking/login.jsp?custid=68dbea2c4069da29a90e18bfUnit,1,OOD_Phishing_Bank_KYC_Scam,Banking KYC phishing on .top TLD

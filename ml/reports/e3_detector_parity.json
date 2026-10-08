@@ -1,0 +1,41 @@
+{
+  "url_detector_parity": [
+    {
+      "url": "https://www.apnacollege.in/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit",
+      "direct_calibrated_probability": 0.0006723241971739581,
+      "parity_status": "MATCHED"
+    },
+    {
+      "url": "http://paypal-verification@secure-login-update.net/auth",
+      "direct_calibrated_probability": 0.9693122358096036,
+      "parity_status": "MATCHED"
+    },
+    {
+      "url": "https://google.com/search?q=security",
+      "direct_calibrated_probability": 0.000701711054867023,
+      "parity_status": "MATCHED"
+    },
+    {
+      "url": "http://192.168.1.1/admin/login.php",
+      "direct_calibrated_probability": 0.9993748103995519,
+      "parity_status": "MATCHED"
+    }
+  ],
+  "text_detector_parity": [
+    {
+      "message": "Your one-time verification code is 492810. This code expires in 5 minutes.",
+      "direct_calibrated_probability": 0.03142742043154052,
+      "parity_status": "MATCHED"
+    },
+    {
+      "message": "URGENT SECURITY ALERT: Your bank account ending in 4912 has been frozen. Verify at http://secure-banking-auth.com immediately.",
+      "direct_calibrated_probability": 0.9413187222546133,
+      "parity_status": "MATCHED"
+    },
+    {
+      "message": "Hi Sarah, could you please review the Q3 budget spreadsheet attached? Thanks, Mark.",
+      "direct_calibrated_probability": 0.01375029049877565,
+      "parity_status": "MATCHED"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "ood_corpus_count": 6000,
+  "sources": {
+    "trec_2007_spam_corpus_v1": 3000,
+    "nus_sms_corpus_v1": 3000
+  },
+  "class_distribution": {
+    "legitimate_0": 4500,
+    "scam_phishing_1": 1500
+  },
+  "checksum_sha256": "097b924ce3d37f55d27413c8fa40a32bd7c898681ec4d965bb6972dfd49a3a87"
+}

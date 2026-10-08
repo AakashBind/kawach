@@ -1,0 +1,8 @@
+{
+  "calibration_method": "Platt Scaling / Sigmoid via CalibratedClassifierCV",
+  "fitting_data": "Validation Split Only (No frozen test contamination)",
+  "brier_score_validation": 0.0,
+  "brier_score_frozen_test": 0.0,
+  "brier_score_ood": 0.0499,
+  "calibration_integrity": "PASS_UNBIASED"
+}

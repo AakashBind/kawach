@@ -1,0 +1,17 @@
+{
+  "phase": "E.4",
+  "redirect_policy": {
+    "max_redirect_hops": 3,
+    "automatic_redirects_enabled": false,
+    "redirect_handling_mechanism": "Manual interceptor checking HTTP 301, 302, 303, 307, 308 response headers",
+    "hop_by_hop_ssrf_revalidation": true,
+    "max_hops_exceeded_action": "Halts fetch chain safely and emits HIGH severity evidence describing redirect loop / chain exhaustion",
+    "domain_transition_tracking": "Calculates cross-domain shifts across hops and logs full hop audit trail"
+  },
+  "scenarios_tested": {
+    "single_legitimate_redirect": "PASSED - Resolves destination and records hop trail",
+    "cross_domain_redirect": "PASSED - Flags external redirect hop and inspects final target",
+    "redirect_to_private_ip": "PASSED - SSRF validator triggers on hop 2 and aborts fetch immediately",
+    "infinite_redirect_loop": "PASSED - Halts at hop 3 with MAX_REDIRECTS_EXCEEDED error"
+  }
+}

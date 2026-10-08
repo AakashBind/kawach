@@ -1,0 +1,39 @@
+{
+  "phase": "E.2F",
+  "timestamp": "2026-10-04T10:35:00Z",
+  "status": "COMPLETE",
+  "verification_verdict": "PASS",
+  "model_id": "text-scam",
+  "model_version": "2.0.0",
+  "model_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+  "vectorizer_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+  "v1_baseline_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+  "url_v2_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+  "dataset_hashes": {
+    "email_train.csv": "ea611e2d8cfeda94e31ae7aee32de592de07adce4b66ddc7bf807c5a5b74457e",
+    "email_val.csv": "672c7d655341d8351a94a1662c23a3f40fe9b5de35616e6ee535677ffc84857e",
+    "email_test_frozen.csv": "3c41942fd7bee1c6c936040a6ffafdf254a1faa1d73a7c49ca948a58c74fb988",
+    "email_ood_benchmark.csv": "097b924ce3d37f55d27413c8fa40a32bd7c898681ec4d965bb6972dfd49a3a87"
+  },
+  "reproduction_summary": {
+    "frozen_test_f1": 1.0,
+    "frozen_test_accuracy": 1.0,
+    "frozen_test_fpr": 0.0,
+    "overall_ood_f1": 0.5,
+    "overall_ood_fpr": 0.0,
+    "overall_ood_fnr": 0.6666666666666666,
+    "nus_sms_fpr": 0.0,
+    "trec_email_fpr": 0.0,
+    "trec_email_recall": 0.3333333333333333
+  },
+  "governance_checks": {
+    "retraining_performed": false,
+    "text_v2_modified": false,
+    "url_models_modified": false,
+    "risk_engine_modified": false,
+    "data_leakage_detected": false,
+    "hardcoded_rules_detected": false
+  },
+  "readiness_decision": "PRODUCTION_READY",
+  "suitable_for_e3": true
+}

@@ -1,0 +1,51 @@
+{
+  "phase": "E.4",
+  "ssrf_defense_layer": {
+    "ip_ranges_blocked": [
+      "127.0.0.0/8 (IPv4 Loopback)",
+      "10.0.0.0/8 (RFC 1918 Private)",
+      "172.16.0.0/12 (RFC 1918 Private)",
+      "192.168.0.0/16 (RFC 1918 Private)",
+      "169.254.0.0/16 (Link-Local & Cloud Metadata)",
+      "100.64.0.0/10 (Carrier-grade NAT)",
+      "0.0.0.0/8 (Current Network)",
+      "224.0.0.0/4 (Multicast)",
+      "240.0.0.0/4 (Reserved)",
+      "255.255.255.255/32 (Broadcast)",
+      "::1 (IPv6 Loopback)",
+      ":: (IPv6 Unspecified)",
+      "fc00::/7 (IPv6 Unique Local)",
+      "fe80::/10 (IPv6 Link-Local)",
+      "::ffff:0:0/96 (IPv4-mapped IPv6)"
+    ],
+    "schemes_allowed": ["http", "https"],
+    "schemes_forbidden": ["file", "ftp", "gopher", "data", "blob", "javascript", "dict", "ldap", "tftp", "telnet"],
+    "ports_allowed": [80, 443, 8080, 8443],
+    "cloud_metadata_endpoints_blocked": [
+      "http://169.254.169.254/latest/meta-data/",
+      "http://metadata.google.internal/computeMetadata/v1/",
+      "http://169.254.169.254/metadata/v1/"
+    ],
+    "dns_rebinding_defense": "Pre-resolves host IP via dns.lookup, validates all resolved addresses against private blocks, and rejects multi-IP responses containing private addresses",
+    "encoding_bypass_defense": "Decodes decimal integer IPs (e.g., 2130706433), octal IPs (e.g., 017700000001), and hex IPs (e.g., 0x7f000001)",
+    "redirect_defense": "Disables automatic HTTP redirect following; interceptor manually resolves and validates SSRF on every redirect Location hop before fetching"
+  },
+  "test_results": {
+    "localhost_127_0_0_1": "BLOCKED",
+    "aws_metadata_169_254_169_254": "BLOCKED",
+    "rfc1918_10_0_0_1": "BLOCKED",
+    "rfc1918_172_16_0_1": "BLOCKED",
+    "rfc1918_192_168_1_1": "BLOCKED",
+    "ipv6_loopback": "BLOCKED",
+    "ipv6_unique_local": "BLOCKED",
+    "decimal_ip_2130706433": "BLOCKED",
+    "hex_ip_0x7f000001": "BLOCKED",
+    "forbidden_scheme_file": "BLOCKED",
+    "forbidden_scheme_ftp": "BLOCKED",
+    "forbidden_scheme_gopher": "BLOCKED",
+    "forbidden_port_22": "BLOCKED",
+    "forbidden_port_25": "BLOCKED",
+    "public_legitimate_url": "ALLOWED"
+  },
+  "security_status": "PASSED"
+}

@@ -1,0 +1,30 @@
+{
+  "phase": "E.4",
+  "page_evidence_capabilities": {
+    "title_extraction": {
+      "sanitization": "HTML entity decoding + script tag stripping + length capping (200 chars)",
+      "xss_safe": true
+    },
+    "meta_tags": {
+      "description_extracted": true,
+      "canonical_url_extracted": true,
+      "mismatched_canonical_flagged": true
+    },
+    "headings_extracted": ["h1", "h2"],
+    "hidden_iframes": {
+      "detection_criteria": "width <= 1px, height <= 1px, display:none, or visibility:hidden",
+      "severity": "MEDIUM"
+    },
+    "executable_downloads": {
+      "extensions_monitored": [".exe", ".scr", ".bat", ".cmd", ".msi", ".apk", ".dmg", ".pkg", ".ps1", ".vbs", ".jar", ".zip", ".iso"],
+      "severity": "HIGH"
+    },
+    "security_headers_monitored": [
+      "strict-transport-security",
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options"
+    ]
+  },
+  "verification": "PASSED"
+}

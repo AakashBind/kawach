@@ -1,0 +1,17 @@
+{
+  "aggregation_framework": "Evidence-Weighted Multi-Signal Bayesian/Policy Arbiter",
+  "baseline_clean_score": 5,
+  "evidence_weights": {
+    "critical": 45,
+    "high": 28,
+    "medium": 15,
+    "low": -6
+  },
+  "conflict_handling": {
+    "policy": "Preserve high-risk evidence rather than averaging probabilities; explain social engineering or link deception explicitly in reasons."
+  },
+  "qr_double_count_protection": {
+    "policy": "QR decode evidence is classified as metadata severity (low) and does not contribute score points; security risk is governed strictly by the downstream URL detector."
+  },
+  "status": "DETERMINISTIC_VERIFIED"
+}

@@ -1,0 +1,19 @@
+{
+  "train_template_count": 9786,
+  "test_template_count": 2589,
+  "shared_template_count": 914,
+  "test_samples_sharing_template": 1337,
+  "test_samples_sharing_template_pct": 43.85,
+  "sample_shared_templates": [
+    "docker.com::/file/<HEX_HASH>/design-spec-v<NUM>::node-id",
+    "cam.ac.uk::/course/machine-learning-specialization/player::session&unit_id",
+    "europa.eu::/data/statistics/dataset::format&query&year",
+    "vintage-bookstore-paris.fr::/temp/session/coinbase-auth-step.php::flow&session_id",
+    "acm.org::/standards/document/<NUM>/v<NUM>::",
+    "target.com::/watch::index&list&v",
+    "plumbing-express-sydney.com.au::/assets/css/fedex-delivery/secure/account-login.php::client",
+    "plumbing-express-sydney.com.au::/wp-content/plugins/citibank-login/auth.php::action&token",
+    "ieee.org::/wiki/data_structures_and_algorithms::",
+    "restaurant-elpaso.com::/assets/css/chase/secure/account-login.php::client"
+  ]
+}

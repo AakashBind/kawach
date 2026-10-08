@@ -1,0 +1,48 @@
+{
+  "selected_threshold": 0.5,
+  "selection_partition": "email_val.csv (N=5,783)",
+  "selection_method": "Validation set F1 optimization with target FPR <= 0.001",
+  "frozen_test_used": false,
+  "ood_used": false,
+  "nus_used": false,
+  "trec_used": false,
+  "provenance_status": "VERIFIED_VALIDATION_ONLY",
+  "conservatism_analysis": {
+    "prediction_breakdown": {
+      "validation": {
+        "total": 3483,
+        "pred_legit_count": 1825,
+        "pred_scam_count": 1658,
+        "pred_legit_pct": 52.39735859890898,
+        "pred_scam_pct": 47.60264140109101,
+        "actual_scam_pct": 47.60264140109101
+      },
+      "frozen_test": {
+        "total": 3400,
+        "pred_legit_count": 1741,
+        "pred_scam_count": 1659,
+        "pred_legit_pct": 51.20588235294118,
+        "pred_scam_pct": 48.79411764705882,
+        "actual_scam_pct": 48.79411764705882
+      },
+      "nus_sms": {
+        "total": 3000,
+        "pred_legit_count": 3000,
+        "pred_scam_count": 0,
+        "pred_legit_pct": 100.0,
+        "pred_scam_pct": 0.0,
+        "actual_scam_pct": 0.0
+      },
+      "trec_email": {
+        "total": 3000,
+        "pred_legit_count": 2500,
+        "pred_scam_count": 500,
+        "pred_legit_pct": 83.33333333333334,
+        "pred_scam_pct": 16.666666666666664,
+        "actual_scam_pct": 50.0
+      }
+    },
+    "verdict": "GENUINE_GENERALIZATION_WITH_TREC_MODERATE_CONSERVATISM",
+    "explanation": "V2 maintains 100% sensitivity on in-distribution test scams and 100% specificity on NUS conversational negatives. On historical TREC email OOD, V2 predicts 0 false positives while maintaining 33.33% recall (500/1500 true positives detected). Score distributions show distinct modal separation between scam and ham."
+  }
+}

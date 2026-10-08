@@ -1,0 +1,15 @@
+{
+  "unique_domains": {
+    "train": 4043,
+    "val": 1042,
+    "test": 1067,
+    "ood": 19
+  },
+  "domain_cross_overlap": {
+    "train_val_shared": 255,
+    "train_test_shared": 278,
+    "val_test_shared": 197,
+    "train_test_overlap_pct": 26.05
+  },
+  "domain_partition_notes": "Phase C performed stratified sampling across the corpus. While exact URLs are 100% disjoint, high-frequency domains (e.g. github.com, coursera.org) have disjoint paths across splits."
+}

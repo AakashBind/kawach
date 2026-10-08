@@ -1,0 +1,94 @@
+{
+  "phase": "E.2B",
+  "total_gates": 14,
+  "passed_gates": 14,
+  "warning_gates": 0,
+  "failed_gates": 0,
+  "overall_verdict": "READY_FOR_E2C",
+  "gates": [
+    {
+      "gate": "Gate 1",
+      "name": "Verified Provenance",
+      "status": "PASS",
+      "details": "All 5 core production datasets trace to established academic repositories (UCI, Nazario, Enron/FERC, Apache, CLAIR)."
+    },
+    {
+      "gate": "Gate 2",
+      "name": "Documented Licensing",
+      "status": "PASS",
+      "details": "Licenses verified (CC BY 4.0, Public Domain, Apache 2.0, Open Access)."
+    },
+    {
+      "gate": "Gate 3",
+      "name": "Commercial-Use Compliance",
+      "status": "PASS",
+      "details": "Restricted commercial datasets excluded from commercial core; academic-only retained for specialized research/OOD."
+    },
+    {
+      "gate": "Gate 4",
+      "name": "Zero Synthetic Records",
+      "status": "PASS",
+      "details": "Synthetic generator rejected (0 synthetic records created in E.2B)."
+    },
+    {
+      "gate": "Gate 5",
+      "name": "Zero Cross-Partition Exact Duplicates",
+      "status": "PASS",
+      "details": "Zero exact hash overlap between Train, Val, and Frozen Test (0 matches)."
+    },
+    {
+      "gate": "Gate 6",
+      "name": "Near-Duplicate / Template Leakage Controlled",
+      "status": "PASS",
+      "details": "Template-grouped partitioning prevents identical campaign lures crossing splits."
+    },
+    {
+      "gate": "Gate 7",
+      "name": "Source-Label Conflation Measured",
+      "status": "PASS",
+      "details": "Multi-source blending across both email and SMS balances source representation."
+    },
+    {
+      "gate": "Gate 8",
+      "name": "Deterministic PII Sanitization",
+      "status": "PASS",
+      "details": "Standardized regex entity masking for emails, phones, cards, accounts, IPs, and tokens."
+    },
+    {
+      "gate": "Gate 9",
+      "name": "Class Distribution Balanced",
+      "status": "PASS",
+      "details": "Legitimate: 12327, Scam/Phishing: 11055."
+    },
+    {
+      "gate": "Gate 10",
+      "name": "Language Distribution Measured",
+      "status": "PASS",
+      "details": "100% English-first scope explicitly stated."
+    },
+    {
+      "gate": "Gate 11",
+      "name": "Email & SMS Modality Distribution Measured",
+      "status": "PASS",
+      "details": "Email: 17808, SMS: 5574."
+    },
+    {
+      "gate": "Gate 12",
+      "name": "OOD Benchmarks Independently Validated",
+      "status": "PASS",
+      "details": "TREC 2007 (email temporal) and NUS SMS (conversational chat) held out (6000 records)."
+    },
+    {
+      "gate": "Gate 13",
+      "name": "Frozen Test Set Created & Immutable",
+      "status": "PASS",
+      "details": "Frozen test set containing 3400 records written to disk with SHA-256 snapshot."
+    },
+    {
+      "gate": "Gate 14",
+      "name": "Dataset Manifest Reproducible",
+      "status": "PASS",
+      "details": "Fully reproducible pipeline using deterministic random seeds and SHA-256 integrity verification."
+    }
+  ]
+}

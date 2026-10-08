@@ -1,0 +1,37 @@
+{
+  "validation_brier_score": 0.0053,
+  "ood_brier_score": 0.1519,
+  "validation_reliability": {
+    "mean_predicted": [
+      0.0348,
+      0.1493,
+      0.7727,
+      0.971
+    ],
+    "fraction_positives": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  "ood_reliability": {
+    "mean_predicted": [
+      0.1103,
+      0.2357,
+      0.3468,
+      0.4965,
+      0.5285,
+      0.6051
+    ],
+    "fraction_positives": [
+      0.0,
+      0.1789,
+      0.0,
+      0.7394,
+      0.7192,
+      0.0
+    ]
+  },
+  "calibration_verdict": "In-distribution probabilities are highly calibrated (Brier=0.0053). On OOD conversational data, scores exhibit moderate overconfidence due to domain shift."
+}

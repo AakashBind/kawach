@@ -1,0 +1,79 @@
+{
+  "coverage_categories": [
+    {
+      "category": "Educational & LMS Platforms",
+      "samples": 2388,
+      "features_covered": [
+        "long_queries",
+        "unit_ids",
+        "mongo_objectids",
+        "uuid_slugs"
+      ]
+    },
+    {
+      "category": "Developer & SaaS Systems",
+      "samples": 2235,
+      "features_covered": [
+        "git_shas",
+        "pr_numbers",
+        "diff_params",
+        "code_line_anchors"
+      ]
+    },
+    {
+      "category": "E-Commerce & Media Portals",
+      "samples": 2274,
+      "features_covered": [
+        "asin_codes",
+        "facet_filters",
+        "tracking_params",
+        "nested_encodings"
+      ]
+    },
+    {
+      "category": "Global Institutions & Gov",
+      "samples": 2430,
+      "features_covered": [
+        "multi_level_cctlds",
+        "pdf_docs",
+        "portal_services"
+      ]
+    },
+    {
+      "category": "Phishing - Brand Impersonation",
+      "samples": 2585,
+      "features_covered": [
+        "typosquatting",
+        "subdomain_brand_nesting",
+        "keyword_chains"
+      ]
+    },
+    {
+      "category": "Phishing - Compromised Hosts",
+      "samples": 2486,
+      "features_covered": [
+        "wp_content_paths",
+        "script_injection",
+        "session_redirects"
+      ]
+    },
+    {
+      "category": "Phishing - IP Host & Non-Standard Ports",
+      "samples": 2200,
+      "features_covered": [
+        "ipv4_hosts",
+        "custom_ports_8080_8443",
+        "asp_php_endpoints"
+      ]
+    },
+    {
+      "category": "Phishing - Credential Harvesting",
+      "samples": 2400,
+      "features_covered": [
+        "at_symbol_auth",
+        "free_cloud_hosting",
+        "encoded_redirects"
+      ]
+    }
+  ]
+}

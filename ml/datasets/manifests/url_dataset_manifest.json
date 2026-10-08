@@ -1,0 +1,17 @@
+{
+  "dataset_id": "url_uci_phiusiil_benchmark_v1",
+  "source_name": "UCI Machine Learning Repository & Benchmark Archives",
+  "source_url": "https://archive.ics.uci.edu/dataset/327/phishing",
+  "license": "CC BY 4.0",
+  "access_date": "2026-10-03",
+  "raw_snapshot_hash": "cb7e0eff529a7d932dca56adc8f37c4a5acc840ac2a4ac03f086ba38e9643105",
+  "total_records_raw": 7881,
+  "split_strategy": "Stratified 70/15/15 (train/val/frozen_test)",
+  "train_count": 5516,
+  "val_count": 1182,
+  "test_count": 1183,
+  "class_distribution": {
+    "legitimate_0": 1881,
+    "phishing_1": 6000
+  }
+}

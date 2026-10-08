@@ -1,0 +1,9 @@
+{
+  "train_vs_frozen_test_exact_matches": 0,
+  "val_vs_frozen_test_exact_matches": 0,
+  "train_vs_nus_exact_matches": 0,
+  "val_vs_nus_exact_matches": 0,
+  "train_vs_trec_exact_matches": 0,
+  "val_vs_trec_exact_matches": 0,
+  "contamination_detected": false
+}

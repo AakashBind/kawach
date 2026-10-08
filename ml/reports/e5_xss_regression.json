@@ -1,0 +1,34 @@
+{
+  "phase": "E.5",
+  "xss_regression_tests": [
+    {
+      "vector": "Website Title: <script>alert(1)</script>",
+      "parser": "Cheerio AST",
+      "frontend_render": "React text node interpolation (escaped)",
+      "result": "Rendered as plain inert text string; zero script execution",
+      "status": "PASS"
+    },
+    {
+      "vector": "Form Action: javascript:alert('xss')",
+      "parser": "Website Analyzer Form Extractor",
+      "frontend_render": "Extracted as raw action string; not executed",
+      "result": "Flagged as INSECURE_FORM_ACTION without execution",
+      "status": "PASS"
+    },
+    {
+      "vector": "Message Content: <img src=x onerror=alert(document.cookie)>",
+      "parser": "Message Analyzer Normalizer",
+      "frontend_render": "React text node interpolation (escaped)",
+      "result": "Rendered as plain inert text string; zero script execution",
+      "status": "PASS"
+    },
+    {
+      "vector": "QR Text Payload: <svg onload=alert(1)>",
+      "parser": "QR Decoder jsQR",
+      "frontend_render": "React text node interpolation (escaped)",
+      "result": "Rendered as plain inert text string; zero script execution",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "XSS_REGRESSION_100_PERCENT_PASS"
+}

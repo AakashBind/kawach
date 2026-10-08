@@ -1,0 +1,30 @@
+{
+  "phase": "E.4",
+  "form_analysis": {
+    "password_fields": {
+      "detected": true,
+      "severity_when_present": "MEDIUM (informative, normal for auth pages)",
+      "severity_when_mismatched_target": "CRITICAL (phishing lure harvesting credentials to third-party domain)"
+    },
+    "sensitive_inputs": {
+      "payment_fields": "Matches credit card, cvv, ssn, card number patterns (HIGH severity)",
+      "credential_fields": "Matches password, passwd, passcode, secret (MEDIUM severity)"
+    },
+    "form_action_validation": {
+      "same_origin_post": "Marked SAFE / Normal",
+      "external_mismatched_post": "Marked CRITICAL (Cross-domain credential exfiltration)",
+      "insecure_http_from_https": "Marked HIGH (Cleartext credential transmission)"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "Benign login form on google.com posting to /accounts/login",
+      "result": "Form detected: 1 password input, same-origin action. Risk: LOW. Evidence: Informative form detected."
+    },
+    {
+      "name": "Phishing login form on verify-paypal-login.com posting to evil-hacker-collector.ru/steal.php",
+      "result": "Form detected: 1 password input, external mismatched action evil-hacker-collector.ru. Risk: CRITICAL. Evidence: Form submits sensitive credentials to external untrusted domain."
+    }
+  ],
+  "verification": "PASSED"
+}

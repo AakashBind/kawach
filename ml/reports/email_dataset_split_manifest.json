@@ -1,0 +1,29 @@
+{
+  "strategy": "Stratified Template-Grouped 70/15/15",
+  "random_seed": 42,
+  "total_records": 23382,
+  "train": {
+    "count": 16499,
+    "ratio": 0.7056,
+    "legitimate_0": 8761,
+    "scam_phishing_1": 7738
+  },
+  "validation": {
+    "count": 3483,
+    "ratio": 0.149,
+    "legitimate_0": 1825,
+    "scam_phishing_1": 1658
+  },
+  "frozen_test": {
+    "count": 3400,
+    "ratio": 0.1454,
+    "legitimate_0": 1741,
+    "scam_phishing_1": 1659
+  },
+  "leakage_verification": {
+    "train_val_hash_overlap": 0,
+    "train_test_hash_overlap": 0,
+    "val_test_hash_overlap": 0,
+    "verdict": "ZERO_LEAKAGE_PASS"
+  }
+}

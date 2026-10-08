@@ -1,0 +1,18 @@
+{
+  "phase": "E.5",
+  "authentication_tests": [
+    { "test": "User Registration with strong password", "status": "PASS" },
+    { "test": "User Registration with duplicate email rejected (400)", "status": "PASS" },
+    { "test": "User Login with valid credentials returns JWT", "status": "PASS" },
+    { "test": "User Login with invalid password rejected (401)", "status": "PASS" },
+    { "test": "Protected endpoint GET /api/v1/auth/me rejects unauthenticated (401)", "status": "PASS" },
+    { "test": "Protected endpoint GET /api/v1/auth/me accepts valid Bearer token", "status": "PASS" }
+  ],
+  "authorization_idor_tests": [
+    { "test": "User A creates scan, User B attempts DELETE /api/v1/scans/:id -> 403 Forbidden", "status": "PASS" },
+    { "test": "User A queries GET /api/v1/scans -> Only returns scans owned by User A", "status": "PASS" },
+    { "test": "User B queries GET /api/v1/scans -> Does NOT leak User A scan history", "status": "PASS" },
+    { "test": "Anonymous scans cannot delete authenticated user scans", "status": "PASS" }
+  ],
+  "verdict": "AUTH_AND_IDOR_PROTECTIONS_VERIFIED_PASS"
+}

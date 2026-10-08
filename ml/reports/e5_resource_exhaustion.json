@@ -1,0 +1,42 @@
+{
+  "phase": "E.5",
+  "exhaustion_vectors_tested": [
+    {
+      "vector": "Excessive URL length (>2048 characters)",
+      "limit": "2048 chars",
+      "behavior": "Zod validator rejects with 400 before model execution",
+      "status": "PASS"
+    },
+    {
+      "vector": "Excessive message length (>50,000 characters)",
+      "limit": "50,000 chars",
+      "behavior": "Zod validator rejects with 400 before vectorizer",
+      "status": "PASS"
+    },
+    {
+      "vector": "Oversized QR upload (>5MB)",
+      "limit": "5 MB",
+      "behavior": "Multer upload middleware rejects with 400 before buffer allocation",
+      "status": "PASS"
+    },
+    {
+      "vector": "Oversized website HTML download (>2MB)",
+      "limit": "2 MB",
+      "behavior": "Website Analyzer aborts stream once 2MB threshold exceeded",
+      "status": "PASS"
+    },
+    {
+      "vector": "Infinite HTTP redirect loop (>=3 hops)",
+      "limit": "3 hops",
+      "behavior": "Fetcher stops at 3 hops and emits MAX_REDIRECTS_EXCEEDED",
+      "status": "PASS"
+    },
+    {
+      "vector": "Slowloris / Hanging website fetch",
+      "limit": "5000 ms timeout",
+      "behavior": "AbortController triggers at 5000ms and returns TIMEOUT status",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "RESOURCE_EXHAUSTION_BOUNDARIES_VERIFIED_PASS"
+}

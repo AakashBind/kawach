@@ -1,0 +1,27 @@
+{
+  "phase": "E.4",
+  "integration_architecture": {
+    "pipeline": "Input URL -> Passive URL ML v2.0.0 Feature Extraction & Inference -> SSRF Pre-validation -> Safe Multi-hop Website Fetch -> Deterministic HTML Security Inspection -> Unified Risk Engine Evidence Aggregation -> Multi-modal Final Risk Assessment",
+    "evidence_types_integrated": [
+      "URL_ML_SUSPICIOUS",
+      "URL_ML_BENIGN",
+      "WEBSITE_PASSWORD_INPUT",
+      "WEBSITE_CREDENTIAL_HARVESTING_EXTERNAL",
+      "WEBSITE_INSECURE_FORM_ACTION",
+      "WEBSITE_BRAND_IMPERSONATION",
+      "WEBSITE_SUSPICIOUS_EXECUTABLE",
+      "WEBSITE_HIDDEN_IFRAME",
+      "WEBSITE_REDIRECT_CHAIN_EXHAUSTED",
+      "WEBSITE_FETCH_TIMEOUT",
+      "WEBSITE_ERROR"
+    ],
+    "evidence_aggregation_rules": {
+      "has_critical_website_evidence": "Elevates overall risk to CRITICAL and decreases uncertainty (uncertainty: LOW)",
+      "url_clean_but_page_malicious": "Risk is elevated by deterministic website evidence (defeats cloaked/clean-looking phishing URLs)",
+      "url_suspicious_but_page_unreachable": "URL ML evidence is retained, uncertainty is elevated, explanation clearly documents fetch failure without clearing risk",
+      "both_clean": "Risk score remains LOW (0-2/100)"
+    }
+  },
+  "deterministic_reproducibility": "100%",
+  "verification": "PASSED"
+}

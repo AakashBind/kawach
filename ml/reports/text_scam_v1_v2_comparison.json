@@ -1,0 +1,30 @@
+{
+  "model_v1": {
+    "version": "1.0.0",
+    "model_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+    "threshold": 0.2,
+    "validation_f1": 1.0,
+    "frozen_test_f1": 1.0,
+    "frozen_test_fpr": 0.0,
+    "frozen_test_fnr": 0.0,
+    "ood_f1": 0.4286,
+    "ood_fpr": 0.8889,
+    "ood_fnr": 0.0,
+    "nus_sms_fpr": 1.0,
+    "trec_email_fpr": 0.6667
+  },
+  "model_v2": {
+    "version": "2.0.0",
+    "model_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+    "threshold": 0.5,
+    "validation_f1": 1.0,
+    "frozen_test_f1": 1.0,
+    "frozen_test_fpr": 0.0,
+    "frozen_test_fnr": 0.0,
+    "ood_f1": 0.5,
+    "ood_fpr": 0.0,
+    "ood_fnr": 0.6667,
+    "nus_sms_fpr": 0.0,
+    "trec_email_fpr": 0.0
+  }
+}

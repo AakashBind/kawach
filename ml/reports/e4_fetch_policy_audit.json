@@ -1,0 +1,14 @@
+{
+  "phase": "E.4",
+  "fetch_policy": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 (SecurityScanner/1.0)",
+    "request_timeout_ms": 5000,
+    "max_response_size_bytes": 2097152,
+    "max_response_size_mb": 2.0,
+    "accepted_content_types": ["text/html", "application/xhtml+xml", "text/plain"],
+    "non_html_handling": "Inspects Content-Type and Content-Length headers, aborts payload download if non-HTML, and records appropriate evidence",
+    "retry_policy": "Single attempt per hop, zero aggressive retries to prevent scanner abuse",
+    "caching": "Scan results stored with timestamp; scanner avoids caching stale bypass responses"
+  },
+  "compliance": "PASSED"
+}

@@ -1,0 +1,40 @@
+{
+  "url_detector": {
+    "detector_id": "url-phishing",
+    "detector_version": "url-phishing-2.0.0",
+    "model_family": "XGBoost + Platt/Sigmoid Probability Calibration",
+    "feature_schema_count": 31,
+    "output_scale": "0.0 - 1.0 calibrated probability",
+    "analysis_statuses_supported": [
+      "success",
+      "insufficient_data",
+      "unavailable",
+      "error"
+    ],
+    "artifact_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+    "contract_status": "VERIFIED"
+  },
+  "text_detector": {
+    "detector_id": "text-scam",
+    "detector_version": "text-scam-2.0.0",
+    "model_family": "TF-IDF + Calibrated Logistic Regression",
+    "decision_threshold": 0.5,
+    "output_scale": "0.0 - 1.0 calibrated probability",
+    "analysis_statuses_supported": [
+      "success",
+      "insufficient_data",
+      "unavailable",
+      "error"
+    ],
+    "model_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+    "vectorizer_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+    "contract_status": "VERIFIED"
+  },
+  "qr_decoder": {
+    "detector_id": "qr-decoder",
+    "detector_version": "qr-decoder-1.0.0",
+    "type": "input_transformation_and_routing",
+    "security_risk_double_counting_prevented": true,
+    "contract_status": "VERIFIED"
+  }
+}

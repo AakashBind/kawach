@@ -1,0 +1,104 @@
+{
+  "phase": "E.2A",
+  "audit_timestamp": "2026-10-04T04:30:00Z",
+  "total_candidate_datasets": 8,
+  "accepted_core_datasets": 3,
+  "accepted_conditional_datasets": 2,
+  "held_out_ood_datasets": 2,
+  "rejected_datasets": 1,
+  "source_breakdown": [
+    {
+      "source_id": "uci_sms_spam_v1",
+      "publisher": "UCI Machine Learning Repository / Almeida et al.",
+      "domain": "SMS Messaging",
+      "raw_records": 5574,
+      "proposed_training_records": 5574,
+      "class_split": {
+        "legitimate": 4827,
+        "scam_phishing": 747
+      },
+      "proportion_of_sms_domain": 1.0,
+      "license_type": "CC BY 4.0",
+      "commercial_usable": true
+    },
+    {
+      "source_id": "nazario_phishing_corpus_v1",
+      "publisher": "Monkey.org / Dr. Jose Nazario",
+      "domain": "Email",
+      "raw_records": 4582,
+      "proposed_training_records": 4582,
+      "class_split": {
+        "legitimate": 0,
+        "scam_phishing": 4582
+      },
+      "proportion_of_email_phishing": 0.528,
+      "license_type": "Public Domain / Anti-Abuse Research",
+      "commercial_usable": true
+    },
+    {
+      "source_id": "enron_email_legitimate_v1",
+      "publisher": "CMU / William Cohen / FERC",
+      "domain": "Email",
+      "raw_records": 517401,
+      "proposed_training_records": 5000,
+      "class_split": {
+        "legitimate": 5000,
+        "scam_phishing": 0
+      },
+      "proportion_of_email_legitimate": 0.546,
+      "license_type": "Public Domain",
+      "commercial_usable": true
+    },
+    {
+      "source_id": "apache_spamassassin_public_v1",
+      "publisher": "Apache Software Foundation",
+      "domain": "Email",
+      "raw_records": 6047,
+      "proposed_training_records": 4150,
+      "class_split": {
+        "legitimate": 4150,
+        "scam_phishing": 0
+      },
+      "license_type": "Apache 2.0",
+      "commercial_usable": true
+    },
+    {
+      "source_id": "clair_nigerian_fraud_v1",
+      "publisher": "University of Michigan CLAIR Group",
+      "domain": "Email / Fraud Letters",
+      "raw_records": 4082,
+      "proposed_training_records": 4082,
+      "class_split": {
+        "legitimate": 0,
+        "scam_phishing": 4082
+      },
+      "license_type": "Academic Research Open Access",
+      "commercial_usable": false
+    },
+    {
+      "source_id": "trec_2007_spam_corpus_v1",
+      "publisher": "NIST / University of Waterloo",
+      "domain": "Email",
+      "raw_records": 75419,
+      "proposed_training_records": 0,
+      "license_type": "Academic Research Agreement",
+      "commercial_usable": false,
+      "role": "HELD_OUT_OOD_BENCHMARK"
+    },
+    {
+      "source_id": "nus_sms_corpus_v1",
+      "publisher": "National University of Singapore",
+      "domain": "SMS Messaging",
+      "raw_records": 67093,
+      "proposed_training_records": 0,
+      "license_type": "NUS Non-Commercial",
+      "commercial_usable": false,
+      "role": "HELD_OUT_CONVERSATIONAL_OOD_BENCHMARK"
+    }
+  ],
+  "source_bias_analysis": {
+    "source_correlation_risk": "HIGH_IF_UNMITIGATED",
+    "observation": "Nazario and CLAIR provide almost 100% positive scam/phishing examples, while Enron provides 100% negative legitimate examples.",
+    "mitigation_strategy": "Multi-source blending: Combine Enron + SpamAssassin Ham + UCI Ham for negatives, and Nazario + CLAIR + UCI Spam for positives. Cross-source evaluation partitions to ensure model does not learn source formatting shortcuts."
+  }
+}

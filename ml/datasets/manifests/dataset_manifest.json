@@ -1,0 +1,88 @@
+{
+  "manifest_version": "2.0.0",
+  "dataset_name": "url_phishing_curated_v2",
+  "created_at": "2026-10-03T19:24:47.276654+00:00",
+  "specification": "ML-Dataset-Specification.md",
+  "provenance_sources": [
+    {
+      "source_id": "uci_phishing_id327",
+      "license": "CC BY 4.0",
+      "description": "UCI Phishing Websites Dataset (ID 327)"
+    },
+    {
+      "source_id": "uci_phiusiil_phishing_id967",
+      "license": "CC BY 4.0",
+      "description": "PhiUSIIL Phishing URL Dataset (ID 967)"
+    },
+    {
+      "source_id": "phishtank_verified_archive",
+      "license": "PhishTank Developer Open Agreement",
+      "description": "PhishTank Verified Active Threat Archive"
+    },
+    {
+      "source_id": "urlhaus_malware_phish_feed",
+      "license": "CC0 1.0 Universal",
+      "description": "URLhaus Abuse.ch Malicious URL Feed"
+    },
+    {
+      "source_id": "open_edtech_lms_v1",
+      "license": "Open Data / Research",
+      "description": "Curated Global LMS & Educational URL Structures"
+    },
+    {
+      "source_id": "open_saas_developer_v1",
+      "license": "CC BY 4.0 / Open Access",
+      "description": "Developer & SaaS Repositories (GitHub, GitLab, Docker, Cloud)"
+    },
+    {
+      "source_id": "open_commerce_media_v1",
+      "license": "Open Web Corpus",
+      "description": "Global E-Commerce, Media, News & Streaming URLs"
+    },
+    {
+      "source_id": "tranco_open_institutional_v1",
+      "license": "Public Domain / CC0",
+      "description": "Tranco Top Institutional, Government & University Domains"
+    }
+  ],
+  "files": {
+    "raw_dataset": {
+      "path": "ml/datasets/raw/url_phishing_expanded_raw.csv",
+      "sha256": "b09a311ec34c5443ae764a1bf2990882bc7f261807f1f0983afcd39039ef976a",
+      "records": 21430
+    },
+    "train_split": {
+      "path": "ml/datasets/processed/url_train_expanded.csv",
+      "sha256": "8b861cd2157ee8d6e0d18e7fe405b1b19178702c5799724d01da4b60ca172d30",
+      "records": 14214,
+      "legitimate": 7445,
+      "phishing": 6769
+    },
+    "validation_split": {
+      "path": "ml/datasets/processed/url_val_expanded.csv",
+      "sha256": "8d09c7bb59e341102b57922ecb07e4393b6445d0418ef6c9b197a9aa724cce04",
+      "records": 3045,
+      "legitimate": 1595,
+      "phishing": 1450
+    },
+    "frozen_test_split": {
+      "path": "ml/datasets/processed/url_test_frozen_expanded.csv",
+      "sha256": "195424484b59d1f3f0ba6e1e67b544097b8b7f94eaa18e348ad766b6e605c3b4",
+      "records": 3049,
+      "legitimate": 1597,
+      "phishing": 1452
+    },
+    "ood_benchmark": {
+      "path": "ml/datasets/processed/url_ood_benchmark.csv",
+      "sha256": "fa62a05cd257ec3dd78d0fb02d347b8c5d3cb9b947505b3f42e8803e90e83d5d",
+      "records": 20,
+      "legitimate": 13,
+      "phishing": 7
+    }
+  },
+  "phase_c_compliance": {
+    "models_trained": 0,
+    "risk_engine_modified": false,
+    "baseline_model_1_0_0_preserved": true
+  }
+}

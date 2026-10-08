@@ -1,0 +1,155 @@
+# ==========================================
+# Scam Shield - Comprehensive .gitignore
+# ==========================================
+
+# ------------------------------------------
+# 1. Dependencies & Package Managers
+# ------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+
+# ------------------------------------------
+# 2. Build Outputs & Compilers
+# ------------------------------------------
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+.rollup.cache/
+.parcel-cache/
+.turbo/
+
+# ------------------------------------------
+# 3. Environment Variables & Secrets
+# ------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!*.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# ------------------------------------------
+# 4. Databases & Runtime Data
+# ------------------------------------------
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+backend/data/*.db
+backend/data/*.db-shm
+backend/data/*.db-wal
+backend/data/*.sqlite
+backend/data/*.sqlite3
+!backend/data/.gitkeep
+
+# ------------------------------------------
+# 5. Python & Machine Learning
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# ------------------------------------------
+# 6. Logs & Temporary Files
+# ------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tmp/
+temp/
+*.tmp
+*.temp
+uploads/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# ------------------------------------------
+# 7. Testing & Coverage Outputs
+# ------------------------------------------
+coverage/
+.nyc_output/
+test-results/
+junit.xml
+
+# ------------------------------------------
+# 8. Operating System Specific
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------
+# 9. IDEs & Editors
+# ------------------------------------------
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ------------------------------------------
+# 10. AI Agent / System Generated Cache
+# ------------------------------------------
+.system_generated/
+scratch/

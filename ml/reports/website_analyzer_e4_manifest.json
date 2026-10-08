@@ -1,0 +1,26 @@
+{
+  "phase": "E.4",
+  "component": "website-analyzer-1.0.0",
+  "timestamp": "2026-10-04T11:21:00Z",
+  "governance": {
+    "url_models_retrained": 0,
+    "text_models_retrained": 0,
+    "url_model_v2_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+    "text_model_v2_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+    "text_vectorizer_v2_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+    "fake_ai_used": false,
+    "hardcoded_predictions_used": false
+  },
+  "endpoints": {
+    "website_scan": "POST /api/v1/scans/website",
+    "url_scan": "POST /api/v1/scans/url",
+    "message_scan": "POST /api/v1/scans/message"
+  },
+  "subsystem_type": "Deterministic Security Inspector",
+  "runtime": "Node.js / TypeScript",
+  "tests_passing": {
+    "backend_test_suites": 6,
+    "backend_tests_total": 46,
+    "ml_tests_total": 58
+  }
+}

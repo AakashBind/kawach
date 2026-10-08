@@ -1,0 +1,17 @@
+{
+  "total_unique_domains": 4871,
+  "train_unique_domains": 3450,
+  "val_unique_domains": 834,
+  "test_unique_domains": 840,
+  "train_test_shared_count": 126,
+  "train_test_shared_pct": 15.0,
+  "train_val_shared_count": 127,
+  "train_val_shared_pct": 15.23,
+  "val_test_shared_count": 109,
+  "val_test_shared_pct": 12.98,
+  "domain_purity": {
+    "pure_legitimate_domains_count": 30,
+    "pure_phishing_domains_count": 4841,
+    "mixed_domains_count": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "phase": "E.2C",
+  "component": "Email_Message_NLP_Detector",
+  "selected_model": "text-scam",
+  "version": "1.0.0",
+  "model_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+  "vectorizer_sha256": "82dec31d11037ea219d430027341f3988792c55c4c97b93a9328a858962bd95e",
+  "training_records": 16499,
+  "validation_records": 3483,
+  "frozen_test_records": 3400,
+  "ood_records": 6000,
+  "selected_threshold": 0.2,
+  "metrics_summary": {
+    "validation_f1": 1.0,
+    "frozen_test_f1": 1.0,
+    "frozen_test_fpr": 0.0,
+    "frozen_test_fnr": 0.0,
+    "ood_f1": 0.4286,
+    "ood_fpr": 0.8889,
+    "ood_fnr": 0.0
+  },
+  "url_model_immutability": {
+    "v1_sha256": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+    "v2_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+    "url_model_modified": false
+  },
+  "readiness_verdict": "READY_FOR_E2D"
+}

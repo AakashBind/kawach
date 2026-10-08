@@ -1,0 +1,29 @@
+{
+  "overall_ood_v2": {
+    "true_negatives": 4500,
+    "false_positives": 0,
+    "false_negatives": 1000,
+    "true_positives": 500,
+    "total": 6000,
+    "fpr": 0.0,
+    "fnr": 0.6666666666666666
+  },
+  "nus_sms_v2": {
+    "true_negatives": 3000,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_positives": 0,
+    "total": 3000,
+    "fpr": 0.0,
+    "fnr": "NOT_APPLICABLE (0 positives)"
+  },
+  "trec_email_v2": {
+    "true_negatives": 1500,
+    "false_positives": 0,
+    "false_negatives": 1000,
+    "true_positives": 500,
+    "total": 3000,
+    "fpr": 0.0,
+    "fnr": 0.6666666666666666
+  }
+}

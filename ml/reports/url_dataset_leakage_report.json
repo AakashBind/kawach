@@ -1,0 +1,15 @@
+{
+  "exact_url_overlap": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "train_ood_overlap": 0,
+    "test_ood_overlap": 0
+  },
+  "domain_distribution": {
+    "train_unique_domains": 4043,
+    "val_unique_domains": 1042,
+    "test_unique_domains": 1067
+  },
+  "ood_isolation_status": "VERIFIED_COMPLETELY_ISOLATED"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "open_commerce_media_v1",
+    "source_category": "Legitimate_Commerce_Media",
+    "legitimate_count": 2274,
+    "phishing_count": 0,
+    "total_count": 2274
+  },
+  {
+    "source_id": "open_edtech_lms_v1",
+    "source_category": "Legitimate_LMS",
+    "legitimate_count": 2388,
+    "phishing_count": 0,
+    "total_count": 2388
+  },
+  {
+    "source_id": "open_pagerank_top_v1",
+    "source_category": "Legitimate_General_Web",
+    "legitimate_count": 1310,
+    "phishing_count": 0,
+    "total_count": 1310
+  },
+  {
+    "source_id": "open_saas_developer_v1",
+    "source_category": "Legitimate_Developer_SaaS",
+    "legitimate_count": 2235,
+    "phishing_count": 0,
+    "total_count": 2235
+  },
+  {
+    "source_id": "phishtank_verified_archive",
+    "source_category": "Phishing_Compromised_Infrastructure",
+    "legitimate_count": 0,
+    "phishing_count": 2486,
+    "total_count": 2486
+  },
+  {
+    "source_id": "tranco_open_institutional_v1",
+    "source_category": "Legitimate_Institutional",
+    "legitimate_count": 2430,
+    "phishing_count": 0,
+    "total_count": 2430
+  },
+  {
+    "source_id": "uci_phishing_id327",
+    "source_category": "Phishing_Credential_Harvesting",
+    "legitimate_count": 0,
+    "phishing_count": 2400,
+    "total_count": 2400
+  },
+  {
+    "source_id": "uci_phiusiil_phishing_id967",
+    "source_category": "Phishing_Brand_Impersonation",
+    "legitimate_count": 0,
+    "phishing_count": 2585,
+    "total_count": 2585
+  },
+  {
+    "source_id": "urlhaus_malware_phish_feed",
+    "source_category": "Phishing_IP_Host",
+    "legitimate_count": 0,
+    "phishing_count": 2200,
+    "total_count": 2200
+  }
+]

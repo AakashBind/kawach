@@ -1,0 +1,47 @@
+{
+  "phase": "E.2A",
+  "audit_timestamp": "2026-10-04T04:30:00Z",
+  "leakage_risk_vectors_identified": [
+    {
+      "vector_id": "exact_text_leakage",
+      "risk_description": "Identical normalized message text appearing across train, val, and test splits.",
+      "severity": "CRITICAL",
+      "mitigation_protocol": "Exact text deduplication on MD5/SHA-256 normalized hash before partition splitting."
+    },
+    {
+      "vector_id": "near_duplicate_text_leakage",
+      "risk_description": "Messages differing only by recipient names, reference IDs, tracking codes, or minor punctuation (e.g. `Ref #1001` vs `Ref #1002`).",
+      "severity": "CRITICAL",
+      "mitigation_protocol": "MinHash LSH and 3-gram Jaccard similarity clustering (threshold >= 0.85). All samples in a cluster assigned to the same partition or deduplicated."
+    },
+    {
+      "vector_id": "template_campaign_leakage",
+      "risk_description": "Mass spam campaigns where a single template body is populated with dynamic variables (e.g., Nigerian 419 inheritance letters sharing identical paragraph structures).",
+      "severity": "HIGH",
+      "mitigation_protocol": "Template fingerprinting using structural n-gram and sentence skeleton hashing. Entire campaign clusters isolated into a single split."
+    },
+    {
+      "vector_id": "url_domain_memorization_leakage",
+      "risk_description": "Embedded phishing URLs or domain names in training text that also appear in test text, allowing the NLP model to memorize malicious domains rather than textual scam semantics.",
+      "severity": "HIGH",
+      "mitigation_protocol": "1. URL Tokenization: Replace raw URLs in NLP text with generic `<URL>` tokens, evaluating URL structure separately via the URL Phishing Detector. 2. Cross-partition domain exclusion: Ensure no domain appearing in train URLs is present in test message URLs."
+    },
+    {
+      "vector_id": "source_and_publisher_leakage",
+      "risk_description": "Single-source imbalance where Source A provides 100% of phishing and Source B provides 100% of legitimate emails, causing the model to learn source-specific formatting/headers rather than scam intent.",
+      "severity": "HIGH",
+      "mitigation_protocol": "Multi-source balanced blending and cross-source validation (training on Source A+B, testing on held-out Source C)."
+    },
+    {
+      "vector_id": "temporal_leakage",
+      "risk_description": "Evaluating historical models on past data without verifying performance on newer emerging scam vectors (e.g. crypto, Telegram, UPI).",
+      "severity": "MEDIUM",
+      "mitigation_protocol": "Establish a distinct chronological out-of-distribution (OOD) stress benchmark containing modern lure vectors."
+    }
+  ],
+  "partition_strategy_specification": {
+    "split_ratios": "70% Train / 15% Validation / 15% Frozen Test",
+    "partition_method": "Stratified Cluster-Aware Partitioning (GroupKFold / Cluster splitting on Near-Duplicate clusters)",
+    "frozen_test_invariance": "Test set generated once, SHA-256 checksummed, and made immutable during model experimentation."
+  }
+}

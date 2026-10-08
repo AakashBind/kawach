@@ -1,0 +1,39 @@
+{
+  "phase": "E.5",
+  "component": "complete-system-v1.0.0",
+  "timestamp": "2026-10-04T11:32:00Z",
+  "status": "COMPLETE",
+  "final_verdict": "PASS WITH LIMITATIONS",
+  "governance": {
+    "url_models_retrained": 0,
+    "text_models_retrained": 0,
+    "url_model_v2_modified": false,
+    "text_model_v2_modified": false,
+    "datasets_modified": false,
+    "fake_ai_used": false,
+    "hardcoded_predictions_used": false,
+    "fabricated_metrics": false,
+    "security_controls_disabled": false
+  },
+  "verified_artifact_shas": {
+    "url_phishing_v2": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+    "url_phishing_v1_baseline": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+    "text_scam_v2_model": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+    "text_scam_v2_vectorizer": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+    "text_scam_v1_model_baseline": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+    "text_scam_v1_vectorizer_baseline": "82dec31d11037ea219d430027341f3988792c55c4c97b93a9328a858962bd95e"
+  },
+  "test_totals": {
+    "backend_test_suites": 7,
+    "backend_tests_passed": 82,
+    "backend_tests_failed": 0,
+    "python_test_suites": 11,
+    "python_tests_passed": 58,
+    "python_tests_failed": 0,
+    "total_automated_tests": 140
+  },
+  "build_status": {
+    "backend_tsc": "PASSED (exit 0)",
+    "frontend_vite": "PASSED (exit 0, 9.66s)"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "phase": "E.5",
+  "endpoint_regressions": [
+    {
+      "endpoint": "POST /api/v1/auth/register",
+      "status": "PASS",
+      "test": "Registers new user, hashes password with bcrypt (cost 10), returns JWT"
+    },
+    {
+      "endpoint": "POST /api/v1/auth/login",
+      "status": "PASS",
+      "test": "Authenticates valid credentials, returns JWT; rejects invalid credentials with 401"
+    },
+    {
+      "endpoint": "GET /api/v1/auth/me",
+      "status": "PASS",
+      "test": "Returns authenticated user profile; rejects unauthenticated with 401"
+    },
+    {
+      "endpoint": "POST /api/v1/scans/url",
+      "status": "PASS",
+      "test": "Executes passive 31-feature extraction and XGBoost v2.0.0; persists scan + evidence"
+    },
+    {
+      "endpoint": "POST /api/v1/scans/message",
+      "status": "PASS",
+      "test": "Executes text-scam-2.0.0 NLP inference + sub-URL extraction; combines signals in Risk Engine"
+    },
+    {
+      "endpoint": "POST /api/v1/scans/qr",
+      "status": "PASS",
+      "test": "Decodes QR matrix buffer, routes extracted URL to URL ML, rejects missing files with 400"
+    },
+    {
+      "endpoint": "POST /api/v1/scans/website",
+      "status": "PASS",
+      "test": "Validates SSRF, performs safe 3-hop fetch, inspects DOM evidence, blocks SSRF with 422"
+    },
+    {
+      "endpoint": "GET /api/v1/scans",
+      "status": "PASS",
+      "test": "Lists user scan history with pagination, type, and risk filters; enforces user isolation"
+    },
+    {
+      "endpoint": "GET /api/v1/scans/:id",
+      "status": "PASS",
+      "test": "Retrieves scan detail with structured evidence array; returns 404 for missing scans"
+    },
+    {
+      "endpoint": "DELETE /api/v1/scans/:id",
+      "status": "PASS",
+      "test": "Deletes user-owned scan; rejects IDOR attempt from other user with 403 Forbidden"
+    },
+    {
+      "endpoint": "POST /api/v1/feedback",
+      "status": "PASS",
+      "test": "Accepts user feedback on false positive/negative; logs audit event without modifying ML model"
+    },
+    {
+      "endpoint": "POST /api/v1/reports",
+      "status": "PASS",
+      "test": "Records fraud incident report; links to optional scan_id"
+    },
+    {
+      "endpoint": "GET /api/v1/models",
+      "status": "PASS",
+      "test": "Exposes model governance metadata and confusion matrices"
+    },
+    {
+      "endpoint": "GET /api/v1/health",
+      "status": "PASS",
+      "test": "Returns database and ML microservice component health"
+    }
+  ],
+  "verdict": "ALL_14_API_ENDPOINTS_REGRESSION_PASS"
+}

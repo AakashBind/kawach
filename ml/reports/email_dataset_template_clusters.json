@@ -1,0 +1,86 @@
+{
+  "total_unique_templates": 8708,
+  "average_records_per_template": 2.69,
+  "largest_template_clusters": [
+    {
+      "template_hash": "4d7860e63f3340bc",
+      "count": 550
+    },
+    {
+      "template_hash": "939190c4287b0230",
+      "count": 550
+    },
+    {
+      "template_hash": "0eff3cf789982c56",
+      "count": 550
+    },
+    {
+      "template_hash": "2ae1cabfd23e0de6",
+      "count": 500
+    },
+    {
+      "template_hash": "6eda7e891dbbae9b",
+      "count": 500
+    },
+    {
+      "template_hash": "9c4c54b9c4d5bbea",
+      "count": 500
+    },
+    {
+      "template_hash": "b077c52eaafa6faa",
+      "count": 500
+    },
+    {
+      "template_hash": "e98ad106be24e8f8",
+      "count": 500
+    },
+    {
+      "template_hash": "e5ffe742592104b4",
+      "count": 242
+    },
+    {
+      "template_hash": "1267880d2b2303e2",
+      "count": 242
+    },
+    {
+      "template_hash": "171ebcf7a62d38b0",
+      "count": 242
+    },
+    {
+      "template_hash": "a3455bbf251069fd",
+      "count": 242
+    },
+    {
+      "template_hash": "dbfd9f1d9f29a56a",
+      "count": 242
+    },
+    {
+      "template_hash": "5f3e1dbbee579af6",
+      "count": 242
+    },
+    {
+      "template_hash": "a75064a384ca8faf",
+      "count": 242
+    },
+    {
+      "template_hash": "f2492bf297b76d53",
+      "count": 241
+    },
+    {
+      "template_hash": "3b1ba73a9edccf20",
+      "count": 241
+    },
+    {
+      "template_hash": "2aa0ea15fd636948",
+      "count": 241
+    },
+    {
+      "template_hash": "e8f430d6197324a6",
+      "count": 241
+    },
+    {
+      "template_hash": "0e47cecc3a8e25ed",
+      "count": 241
+    }
+  ]
+}

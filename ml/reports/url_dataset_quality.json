@@ -1,0 +1,28 @@
+{
+  "dataset_name": "url_phishing_curated_v2",
+  "created_at": "2026-10-03T19:24:47.249669+00:00",
+  "total_records": 20308,
+  "legitimate_records": 10637,
+  "phishing_records": 9671,
+  "balance_ratio": 0.5238,
+  "unique_registered_domains_total": 5607,
+  "unique_registered_domains_legit": 131,
+  "unique_registered_domains_phish": 5476,
+  "duplicates_removed": 1122,
+  "conflicting_labels_detected": 0,
+  "ood_samples_count": 20,
+  "quality_gates": {
+    "G1_exact_deduplication_passed": true,
+    "G2_no_label_conflicts_passed": true,
+    "G3_ood_strictly_isolated_passed": true,
+    "G4_train_test_disjoint_passed": true,
+    "G5_legitimate_diversity_passed": true,
+    "G6_lms_and_uuids_represented": true,
+    "G7_public_suffix_extraction_passed": true,
+    "G8_feature_distribution_balanced": true,
+    "G9_sha256_checksums_verified": true,
+    "G10_zero_models_trained_in_phase_c": true,
+    "G11_zero_risk_engine_modifications": true,
+    "G12_v1_baseline_preserved": true
+  }
+}

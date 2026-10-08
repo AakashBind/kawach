@@ -1,0 +1,51 @@
+{
+  "model_id": "url-phishing",
+  "version": "1.0.0",
+  "algorithm": "logistic_regression_baseline",
+  "dataset_version": "url_uci_phiusiil_benchmark_v1",
+  "artifact_hash": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+  "training_timestamp": "2026-10-03T18:13:42Z",
+  "validation_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": {
+      "true_negatives": 282,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 900
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "average_latency_ms": null,
+    "sample_count": 1182
+  },
+  "frozen_test_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": {
+      "true_negatives": 282,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 901
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "average_latency_ms": 0.16,
+    "sample_count": 1183
+  },
+  "is_calibrated": true,
+  "thresholds": {
+    "low_max": 0.25,
+    "medium_max": 0.6,
+    "high_min": 0.6,
+    "critical_min": 0.85
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "dataset_name": "email_ood_benchmark",
+  "sample_count": 6000,
+  "overall_metrics": {
+    "threshold": 0.2,
+    "accuracy": 0.3333,
+    "precision": 0.2727,
+    "recall": 1.0,
+    "f1_score": 0.4286,
+    "roc_auc": 0.8212,
+    "pr_auc": 0.5869,
+    "brier_score": 0.1519,
+    "false_positive_rate": 0.8889,
+    "false_negative_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "true_negative_rate": 0.1111,
+    "confusion_matrix": {
+      "true_negatives": 500,
+      "false_positives": 4000,
+      "false_negatives": 0,
+      "true_positives": 1500,
+      "total": 6000
+    }
+  },
+  "breakdown_by_source": {
+    "trec_2007_spam_corpus_v1": {
+      "count": 3000,
+      "modality": "email",
+      "accuracy": 0.6667,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1_score": 0.75,
+      "false_positive_rate": 0.6667,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 500,
+        "false_positives": 1000,
+        "false_negatives": 0,
+        "true_positives": 1500,
+        "total": 3000
+      }
+    },
+    "nus_sms_corpus_v1": {
+      "count": 3000,
+      "modality": "sms",
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "false_positive_rate": 1.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 0,
+        "false_positives": 3000,
+        "false_negatives": 0,
+        "true_positives": 0,
+        "total": 3000
+      }
+    }
+  }
+}

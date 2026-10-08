@@ -1,0 +1,221 @@
+{
+  "summary": {
+    "accuracy": 0.95,
+    "precision": 1.0,
+    "recall": 0.8571,
+    "f1": 0.9231,
+    "roc_auc": 0.978,
+    "pr_auc": 0.9683,
+    "brier_score": 0.0499,
+    "confusion_matrix": {
+      "tn": 13,
+      "fp": 0,
+      "fn": 1,
+      "tp": 6
+    },
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.1429
+  },
+  "cases": [
+    {
+      "url": "https://www.apnacollege.in/start",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_LMS_ApnaCollege_Start",
+      "notes": "Legitimate root start portal"
+    },
+    {
+      "url": "https://www.apnacollege.in/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_LMS_ApnaCollege_PathPlayer",
+      "notes": "Legitimate deep LMS path player with MongoDB ObjectID unit"
+    },
+    {
+      "url": "https://online.stanford.edu/courses/soe-ycs0001/unit-player?unit=609aef82b3d11a0017c38ef1",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_LMS_Stanford_UnitPlayer",
+      "notes": "Stanford Online unit player with 24-char ObjectID"
+    },
+    {
+      "url": "https://www.coursera.org/learn/algorithms-part1/lecture/5tG89/binary-search-trees?unit=64b1f8c0e4b0c72199f1a23e",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_LMS_Coursera_Lecture",
+      "notes": "Coursera lecture with ObjectID query parameter"
+    },
+    {
+      "url": "https://nptel.ac.in/courses/106/105/106105183/player.php?courseid=cs-106&unit=61e7a2b9049c4d0016a5ef41Unit",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_LMS_NPTEL_India",
+      "notes": "NPTEL India player with unit ID"
+    },
+    {
+      "url": "https://swayam.gov.in/nc_details/NPTEL?course_code=noc26-cs12&unit_id=65df891c33b7a10018e219ba",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_Gov_LMS_Swayam",
+      "notes": "Indian Govt Swayam LMS with course code and unit ID"
+    },
+    {
+      "url": "https://github.com/torvalds/linux/commit/80327f3630a826e7a2d4ef0a75d5032b4b445398",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_Dev_Git_Commit",
+      "notes": "Linux kernel 40-char SHA1 commit hash"
+    },
+    {
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/merge_requests/12345/diffs?view=inline&w=0#68dbea2c4069da29a90e18bf",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_Dev_GitLab_MR",
+      "notes": "GitLab merge request with fragment hash"
+    },
+    {
+      "url": "https://jira.atlassian.com/browse/CONFSERVER-59896?focusedCommentId=1984210&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1984210",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0001,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_SaaS_Jira_Ticket",
+      "notes": "Complex Jira ticket with percent encoding and long parameters"
+    },
+    {
+      "url": "https://www.amazon.in/gp/product/B08N5WRWNW/ref=ox_sc_act_title_1?smid=A2380W805H1VHI&psc=1&uuid=68dbea2c-4069-da29-a90e-18bf00000000",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_Commerce_Amazon_Deep",
+      "notes": "Amazon India product with ASIN, merchant ID and tracking UUID"
+    },
+    {
+      "url": "https://www.flipkart.com/search?q=laptops&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.brand%255B%255D%3DHP",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0001,
+      "calibrated_probability": 0.0007,
+      "correct": true,
+      "category": "OOD_Commerce_Flipkart_Filter",
+      "notes": "Flipkart search with nested encoded facet filters"
+    },
+    {
+      "url": "https://retail.onlinesbi.sbi/retail/login.htm?service_id=retail_core&auth_session=89327491028391823901",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0216,
+      "calibrated_probability": 0.0009,
+      "correct": true,
+      "category": "OOD_Banking_SBI_Official",
+      "notes": "Official State Bank of India retail login portal"
+    },
+    {
+      "url": "https://incometax.gov.in/iec/foportal/login?redirect_url=https%3A%2F%2Feportal.incometax.gov.in%2Fiec%2Ffoservices%2F%23%2Fdashboard",
+      "true_class": "legitimate",
+      "predicted_class": "legitimate",
+      "raw_score": 0.0097,
+      "calibrated_probability": 0.0008,
+      "correct": true,
+      "category": "OOD_Gov_IncomeTax_India",
+      "notes": "Indian Govt Income Tax e-filing portal"
+    },
+    {
+      "url": "https://apnacollege-course-access.xyz/path-player?courseid=alpha-plus-6&unit=68dbea2c4069da29a90e18bfUnit",
+      "true_class": "phishing",
+      "predicted_class": "legitimate",
+      "raw_score": 0.009,
+      "calibrated_probability": 0.0008,
+      "correct": false,
+      "category": "OOD_Phishing_Brand_Spoof_ApnaCollege",
+      "notes": "Typosquat/impersonation mimicking Apna College path player on .xyz"
+    },
+    {
+      "url": "http://192.241.168.42:8080/apnacollege/login.php?session=68dbea2c4069da29a90e18bf",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9975,
+      "calibrated_probability": 0.9994,
+      "correct": true,
+      "category": "OOD_Phishing_IP_ApnaCollege_Spoof",
+      "notes": "IP host phishing pretending to be LMS login"
+    },
+    {
+      "url": "https://login.microsoftonline.account-verify-2026.click/oauth2/authorize?client_id=4328904832&state=68dbea2c4069da29a90e18bfUnit",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9998,
+      "calibrated_probability": 0.9994,
+      "correct": true,
+      "category": "OOD_Phishing_OAuth_Spoof",
+      "notes": "Phishing simulating Microsoft OAuth callback"
+    },
+    {
+      "url": "http://chase.com.security-alert-customer.net/signin?token=68dbea2c4069da29a90e18bfUnit&redirect=account",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9999,
+      "calibrated_probability": 0.9994,
+      "correct": true,
+      "category": "OOD_Phishing_Subdomain_Chase",
+      "notes": "Subdomain brand spoofing with embedded token"
+    },
+    {
+      "url": "https://wallet-metamask-security-reauth.work/recovery?seed_id=68dbea2c4069da29a90e18bfUnit",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9989,
+      "calibrated_probability": 0.9994,
+      "correct": true,
+      "category": "OOD_Phishing_Crypto_Wallet",
+      "notes": "Crypto wallet seed recovery phishing on .work TLD"
+    },
+    {
+      "url": "http://185.220.101.5/dhl-package/track.php?awb=68dbea2c4069da29a90e18bfUnit&delivery=hold",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9912,
+      "calibrated_probability": 0.9993,
+      "correct": true,
+      "category": "OOD_Phishing_Delivery_Scam",
+      "notes": "Delivery fee scam on IP host"
+    },
+    {
+      "url": "https://sbi-card-kyc-update-portal.top/netbanking/login.jsp?custid=68dbea2c4069da29a90e18bfUnit",
+      "true_class": "phishing",
+      "predicted_class": "phishing",
+      "raw_score": 0.9998,
+      "calibrated_probability": 0.9994,
+      "correct": true,
+      "category": "OOD_Phishing_Bank_KYC_Scam",
+      "notes": "Banking KYC phishing on .top TLD"
+    }
+  ]
+}

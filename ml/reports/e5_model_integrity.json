@@ -1,0 +1,50 @@
+{
+  "phase": "E.5",
+  "models": [
+    {
+      "modality": "url",
+      "model_id": "url-phishing",
+      "version": "2.0.0",
+      "detector_id": "url-phishing-2.0.0",
+      "algorithm": "XGBoost + Platt Calibration",
+      "feature_count": 31,
+      "artifact_path": "ml/models/url_phishing/v2.0.0/model.joblib",
+      "verified_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+      "is_frozen": true,
+      "calibration_status": "active"
+    },
+    {
+      "modality": "text",
+      "model_id": "text-scam",
+      "version": "2.0.0",
+      "detector_id": "text-scam-2.0.0",
+      "algorithm": "TF-IDF + Calibrated Logistic Regression",
+      "feature_count": "5000 word + 5000 char n-grams",
+      "artifact_path": "ml/models/text_scam/v2.0.0/model.joblib",
+      "vectorizer_path": "ml/models/text_scam/v2.0.0/vectorizer.joblib",
+      "verified_model_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+      "verified_vectorizer_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+      "is_frozen": true,
+      "calibration_status": "active"
+    },
+    {
+      "modality": "qr",
+      "model_id": "qr-decoder",
+      "version": "1.0.0",
+      "detector_id": "qr-decoder-1.0.0",
+      "algorithm": "Deterministic QR Matrix Decoder (jsQR / OpenCV)",
+      "is_ml_model": false,
+      "is_frozen": true
+    },
+    {
+      "modality": "website",
+      "model_id": "website-analyzer",
+      "version": "1.0.0",
+      "detector_id": "website-analyzer-1.0.0",
+      "algorithm": "Deterministic HTML AST & Network Inspector (Cheerio)",
+      "is_ml_model": false,
+      "is_frozen": true
+    }
+  ],
+  "verification_verdict": "PASSED - All hashes verified against immutable baselines"
+}

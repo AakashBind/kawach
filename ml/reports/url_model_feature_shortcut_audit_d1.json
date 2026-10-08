@@ -1,0 +1,157 @@
+{
+  "url_length": {
+    "accuracy": 0.6094,
+    "f1": 0.4815,
+    "roc_auc": 0.6652
+  },
+  "hostname_length": {
+    "accuracy": 0.8714,
+    "f1": 0.8472,
+    "roc_auc": 0.9155
+  },
+  "path_length": {
+    "accuracy": 0.737,
+    "f1": 0.6584,
+    "roc_auc": 0.7671
+  },
+  "query_length": {
+    "accuracy": 0.754,
+    "f1": 0.7947,
+    "roc_auc": 0.8595
+  },
+  "num_dots": {
+    "accuracy": 0.7783,
+    "f1": 0.7744,
+    "roc_auc": 0.7908
+  },
+  "num_hyphens": {
+    "accuracy": 0.6658,
+    "f1": 0.6301,
+    "roc_auc": 0.7298
+  },
+  "num_underscores": {
+    "accuracy": 0.6284,
+    "f1": 0.5513,
+    "roc_auc": 0.6386
+  },
+  "num_slashes": {
+    "accuracy": 0.6894,
+    "f1": 0.548,
+    "roc_auc": 0.6986
+  },
+  "num_questionmarks": {
+    "accuracy": 0.754,
+    "f1": 0.7947,
+    "roc_auc": 0.7652
+  },
+  "num_equal_signs": {
+    "accuracy": 0.8049,
+    "f1": 0.7784,
+    "roc_auc": 0.8753
+  },
+  "num_at_symbols": {
+    "accuracy": 0.5382,
+    "f1": 0.1222,
+    "roc_auc": 0.5168
+  },
+  "num_percent_encoded": {
+    "accuracy": 0.5766,
+    "f1": 0.2293,
+    "roc_auc": 0.5571
+  },
+  "num_digits": {
+    "accuracy": 0.655,
+    "f1": 0.6591,
+    "roc_auc": 0.6791
+  },
+  "num_digits_hostname": {
+    "accuracy": 0.8176,
+    "f1": 0.7632,
+    "roc_auc": 0.809
+  },
+  "digit_ratio_url": {
+    "accuracy": 0.5986,
+    "f1": 0.6667,
+    "roc_auc": 0.6178
+  },
+  "digit_ratio_hostname": {
+    "accuracy": 0.8153,
+    "f1": 0.7621,
+    "roc_auc": 0.8088
+  },
+  "has_ip_address": {
+    "accuracy": 0.633,
+    "f1": 0.3731,
+    "roc_auc": 0.6147
+  },
+  "is_https": {
+    "accuracy": 0.7953,
+    "f1": 0.7301,
+    "roc_auc": 0.7856
+  },
+  "subdomain_depth": {
+    "accuracy": 0.7468,
+    "f1": 0.7017,
+    "roc_auc": 0.7436
+  },
+  "has_suspicious_tld": {
+    "accuracy": 0.6523,
+    "f1": 0.4252,
+    "roc_auc": 0.635
+  },
+  "suspicious_token_count": {
+    "accuracy": 0.9797,
+    "f1": 0.9784,
+    "roc_auc": 0.994
+  },
+  "suspicious_token_in_host": {
+    "accuracy": 0.7465,
+    "f1": 0.672,
+    "roc_auc": 0.7528
+  },
+  "suspicious_token_in_path": {
+    "accuracy": 0.8419,
+    "f1": 0.8287,
+    "roc_auc": 0.8683
+  },
+  "url_entropy": {
+    "accuracy": 0.6953,
+    "f1": 0.6923,
+    "roc_auc": 0.7441
+  },
+  "hostname_entropy": {
+    "accuracy": 0.8842,
+    "f1": 0.8828,
+    "roc_auc": 0.9299
+  },
+  "has_non_standard_port": {
+    "accuracy": 0.5713,
+    "f1": 0.1816,
+    "roc_auc": 0.5499
+  },
+  "path_depth": {
+    "accuracy": 0.6894,
+    "f1": 0.548,
+    "roc_auc": 0.6918
+  },
+  "has_double_slash_path": {
+    "accuracy": 0.5238,
+    "f1": 0.0,
+    "roc_auc": 0.5
+  },
+  "has_at_symbol": {
+    "accuracy": 0.5382,
+    "f1": 0.1222,
+    "roc_auc": 0.5168
+  },
+  "consecutive_consonants_max": {
+    "accuracy": 0.6888,
+    "f1": 0.5563,
+    "roc_auc": 0.6827
+  },
+  "longest_token_length": {
+    "accuracy": 0.6622,
+    "f1": 0.5218,
+    "roc_auc": 0.649
+  }
+}

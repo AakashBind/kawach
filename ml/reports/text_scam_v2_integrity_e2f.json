@@ -1,0 +1,46 @@
+{
+  "all_passed": true,
+  "artifacts": {
+    "text_v2_model": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\text_scam\\v2.0.0\\model.joblib",
+      "actual_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+      "expected_sha256": "3dd3b1713b667c64d3acb190be6673ea284efb88a9f69d4434dc1ed07e9c952c",
+      "verified": true
+    },
+    "text_v2_vectorizer": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\text_scam\\v2.0.0\\vectorizer.joblib",
+      "actual_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+      "expected_sha256": "9d95f84636b0f289cb46fbe29c93a2b33f4de1ab54315684fe283d26c25a15e6",
+      "verified": true
+    },
+    "text_v1_model": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\text_scam\\v1.0.0\\model.joblib",
+      "actual_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+      "expected_sha256": "fc533b14161475482661f73cb34e400991586a327cff47c34e246379a69b1ab5",
+      "verified": true
+    },
+    "text_v1_vectorizer": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\text_scam\\v1.0.0\\vectorizer.joblib",
+      "actual_sha256": "82dec31d11037ea219d430027341f3988792c55c4c97b93a9328a858962bd95e",
+      "expected_sha256": "82dec31d11037ea219d430027341f3988792c55c4c97b93a9328a858962bd95e",
+      "verified": true
+    },
+    "url_v2_model": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\url_phishing\\v2.0.0\\model.joblib",
+      "actual_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+      "expected_sha256": "b22a8d964e40e1fbc2d0be9e8d850f92f7571ef1ccdff450fae39bdc41c89156",
+      "verified": true
+    },
+    "url_v1_model": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\ml\\models\\url_phishing\\v1.0.0\\model.joblib",
+      "actual_sha256": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+      "expected_sha256": "3fef298d7351abf0fd84fde4d9b7c538f387b3b69cfc54a3b0fd664fa20d4c49",
+      "verified": true
+    },
+    "risk_engine": {
+      "path": "C:\\Users\\Singh Adarsh\\.gemini\\antigravity\\scratch\\ps5-scam-shield\\backend\\src\\services\\riskEngine.ts",
+      "sha256": "261ab90e573a34c04c29103c14a123cfc46c3dba041b3fe69c47ac6c33d8a9f1",
+      "modified": false
+    }
+  }
+}

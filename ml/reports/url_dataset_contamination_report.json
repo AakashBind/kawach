@@ -1,0 +1,9 @@
+{
+  "apna_college_contamination_check": {
+    "apnacollege_in_train_set": 0,
+    "apnacollege_in_val_set": 0,
+    "apnacollege_in_test_set": 0,
+    "apnacollege_in_ood_benchmark": 2,
+    "status": "PASS_CLEAN_ISOLATION"
+  }
+}

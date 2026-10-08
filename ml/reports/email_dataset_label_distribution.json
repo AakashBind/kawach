@@ -1,0 +1,89 @@
+{
+  "phase": "E.2A",
+  "audit_timestamp": "2026-10-04T04:30:00Z",
+  "target_task": "binary_message_scam_phishing_classification",
+  "target_classes": {
+    "0": "legitimate",
+    "1": "scam_phishing"
+  },
+  "candidate_datasets_label_analysis": [
+    {
+      "dataset_id": "uci_sms_spam_v1",
+      "original_classes": {
+        "ham": 4827,
+        "spam": 747
+      },
+      "mapping_policy": {
+        "ham": { "mapped_to": 0, "confidence": "HIGH", "rationale": "Authentic personal/business mobile SMS without malicious solicitation." },
+        "spam": { "mapped_to": 1, "confidence": "HIGH", "rationale": "Direct urgent prize claims, ringtone subscriptions, mobile verification lures." }
+      }
+    },
+    {
+      "dataset_id": "nazario_phishing_corpus_v1",
+      "original_classes": {
+        "phishing": 4582
+      },
+      "mapping_policy": {
+        "phishing": { "mapped_to": 1, "confidence": "HIGH", "rationale": "Verified in-the-wild credential harvesting, bank fraud, and account suspension emails." }
+      }
+    },
+    {
+      "dataset_id": "enron_email_legitimate_v1",
+      "original_classes": {
+        "legitimate": 517401
+      },
+      "mapping_policy": {
+        "legitimate": { "mapped_to": 0, "confidence": "HIGH", "rationale": "Authentic enterprise corporate correspondence free from external malicious spam." }
+      }
+    },
+    {
+      "dataset_id": "apache_spamassassin_public_v1",
+      "original_classes": {
+        "easy_ham": 2500,
+        "easy_ham_2": 1400,
+        "hard_ham": 250,
+        "spam": 500,
+        "spam_2": 1397
+      },
+      "mapping_policy": {
+        "easy_ham": { "mapped_to": 0, "confidence": "HIGH", "rationale": "Authentic personal and mailing list messages." },
+        "easy_ham_2": { "mapped_to": 0, "confidence": "HIGH", "rationale": "Authentic mailing list discussions." },
+        "hard_ham": { "mapped_to": 0, "confidence": "HIGH", "rationale": "Challenging HTML/newsletter legitimate messages." },
+        "spam": { "mapped_to": "FILTERED_1", "confidence": "MEDIUM", "rationale": "Requires filtering out pure marketing/commercial spam to retain phishing/scam." }
+      }
+    },
+    {
+      "dataset_id": "clair_nigerian_fraud_v1",
+      "original_classes": {
+        "fraud_letters": 4082
+      },
+      "mapping_policy": {
+        "fraud_letters": { "mapped_to": 1, "confidence": "HIGH", "rationale": "Advance-fee fraud (419), fake lottery, inheritance, and government authority impersonation." }
+      }
+    }
+  ],
+  "curated_pool_summary_estimate": {
+    "total_raw_candidate_samples": 23388,
+    "proposed_curated_samples": 18814,
+    "class_counts": {
+      "legitimate_0": 9403,
+      "scam_phishing_1": 9411
+    },
+    "class_ratio": {
+      "legitimate_pct": 49.98,
+      "scam_phishing_pct": 50.02
+    },
+    "balance_status": "EXCELLENT_BALANCED"
+  },
+  "sub_category_coverage": [
+    { "category": "credential_theft", "represented_in": ["nazario_phishing_corpus_v1", "uci_sms_spam_v1"], "coverage": "HIGH" },
+    { "category": "account_verification_scams", "represented_in": ["nazario_phishing_corpus_v1", "uci_sms_spam_v1"], "coverage": "HIGH" },
+    { "category": "payment_banking_fraud", "represented_in": ["nazario_phishing_corpus_v1", "clair_nigerian_fraud_v1"], "coverage": "HIGH" },
+    { "category": "advance_fee_inheritance_scams", "represented_in": ["clair_nigerian_fraud_v1"], "coverage": "HIGH" },
+    { "category": "prize_lottery_scams", "represented_in": ["uci_sms_spam_v1", "clair_nigerian_fraud_v1"], "coverage": "HIGH" },
+    { "category": "authority_impersonation", "represented_in": ["clair_nigerian_fraud_v1", "nazario_phishing_corpus_v1"], "coverage": "HIGH" },
+    { "category": "urgent_suspension_cues", "represented_in": ["nazario_phishing_corpus_v1", "uci_sms_spam_v1"], "coverage": "HIGH" },
+    { "category": "casual_conversational_ham", "represented_in": ["uci_sms_spam_v1", "enron_email_legitimate_v1"], "coverage": "HIGH" },
+    { "category": "corporate_business_ham", "represented_in": ["enron_email_legitimate_v1", "apache_spamassassin_public_v1"], "coverage": "HIGH" }
+  ]
+}

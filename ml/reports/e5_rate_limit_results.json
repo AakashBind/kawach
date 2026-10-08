@@ -1,0 +1,20 @@
+{
+  "phase": "E.5",
+  "rate_limiters": [
+    {
+      "name": "scanRateLimiter",
+      "window_ms": 60000,
+      "max_requests": 30,
+      "target_endpoints": ["/api/v1/scans/url", "/api/v1/scans/message", "/api/v1/scans/qr", "/api/v1/scans/website"],
+      "status": "PASS - Enforces 429 Too Many Requests upon burst limit breach"
+    },
+    {
+      "name": "authRateLimiter",
+      "window_ms": 900000,
+      "max_requests": 10,
+      "target_endpoints": ["/api/v1/auth/login", "/api/v1/auth/register"],
+      "status": "PASS - Mitigates brute-force password spraying"
+    }
+  ],
+  "verdict": "RATE_LIMITING_VERIFIED_PASS"
+}

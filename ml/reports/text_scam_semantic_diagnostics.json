@@ -1,0 +1,57 @@
+{
+  "suite_name": "MANUAL_FORENSIC_DIAGNOSTIC_ONLY",
+  "total_pairs_tested": 5,
+  "pairs_passed": 1,
+  "pairs": [
+    {
+      "pair_id": "pair_1_banking_alert",
+      "category": "Banking Statement vs Credential Phishing",
+      "legitimate_score": 0.6953,
+      "legitimate_classification": "FALSE_POSITIVE_FLAG",
+      "scam_score": 0.9258,
+      "scam_classification": "scam_phishing",
+      "semantic_separation": 0.2305,
+      "passed": false
+    },
+    {
+      "pair_id": "pair_2_otp_code",
+      "category": "Legitimate OTP Delivery vs Fraudulent OTP Solicitation",
+      "legitimate_score": 0.3794,
+      "legitimate_classification": "FALSE_POSITIVE_FLAG",
+      "scam_score": 0.7838,
+      "scam_classification": "scam_phishing",
+      "semantic_separation": 0.4044,
+      "passed": false
+    },
+    {
+      "pair_id": "pair_3_parcel_delivery",
+      "category": "Parcel Tracking Update vs Delivery Extortion Smishing",
+      "legitimate_score": 0.2321,
+      "legitimate_classification": "FALSE_POSITIVE_FLAG",
+      "scam_score": 0.7062,
+      "scam_classification": "scam_phishing",
+      "semantic_separation": 0.4741,
+      "passed": false
+    },
+    {
+      "pair_id": "pair_4_workplace_urgency",
+      "category": "Urgent Work Request vs Spear Phishing Invoice",
+      "legitimate_score": 0.1205,
+      "legitimate_classification": "legitimate",
+      "scam_score": 0.7101,
+      "scam_classification": "scam_phishing",
+      "semantic_separation": 0.5896,
+      "passed": true
+    },
+    {
+      "pair_id": "pair_5_support_summons",
+      "category": "IT Support Ticket vs Webmail Quota Harvesting",
+      "legitimate_score": 0.5422,
+      "legitimate_classification": "FALSE_POSITIVE_FLAG",
+      "scam_score": 0.8445,
+      "scam_classification": "scam_phishing",
+      "semantic_separation": 0.3023,
+      "passed": false
+    }
+  ]
+}
