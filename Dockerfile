@@ -82,4 +82,4 @@ ENV DATABASE_PATH=/app/data/scam_shield.db
 EXPOSE 8080 5000
 
 # Start both ML microservice and Node.js backend
-CMD ["./start.sh"]
+CMD ["/bin/sh", "./start.sh"]
