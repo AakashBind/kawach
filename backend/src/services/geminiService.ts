@@ -27,7 +27,7 @@ export const GeminiService = {
       CONFIG.GEMINI_API_KEY;
 
     if (!apiKey) {
-      console.warn('[GeminiService]: No API key detected in environment variables.');
+      console.warn('[GeminiService]: No GEMINI_API_KEY set in environment.');
       return this.getLocalCybersecurityFallback(userPrompt);
     }
 
@@ -59,18 +59,19 @@ export const GeminiService = {
         validContents.push({ role: 'user', parts: [{ text: userPrompt }] });
       }
 
-      // Support Gemini models
+      // High-availability verified model sequence
       const modelsToTry = [
-        'gemini-1.5-flash',
-        'gemini-2.0-flash',
-        'gemini-1.5-flash-latest',
-        'gemini-1.5-pro'
+        'gemini-3.5-flash-lite',
+        'gemini-3.8-flash',
+        'gemini-flash-lite-latest',
+        'gemini-3.7-flash',
+        'gemini-flash-latest'
       ];
       let lastError: any = null;
 
       for (const model of modelsToTry) {
         try {
-          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
           const response = await axios.post(
             endpoint,
             {
@@ -79,13 +80,16 @@ export const GeminiService = {
                 parts: [{ text: CYBER_SECURITY_SYSTEM_PROMPT }]
               },
               generationConfig: {
-                temperature: 0.5,
+                temperature: 0.3,
                 maxOutputTokens: 1024
               }
             },
             {
-              headers: { 'Content-Type': 'application/json' },
-              timeout: 15000
+              headers: {
+                'Content-Type': 'application/json',
+                'X-goog-api-key': apiKey
+              },
+              timeout: 12000
             }
           );
 
@@ -96,12 +100,11 @@ export const GeminiService = {
           }
         } catch (err: any) {
           lastError = err;
-          console.warn(`[GeminiService Model ${model} Failed]:`, err.response?.data?.error?.message || err.message);
           continue;
         }
       }
 
-      console.error('[GeminiService All Models Exhausted]:', lastError?.response?.data || lastError?.message);
+      console.warn('[GeminiService Warning]: All models fell back. Detail:', lastError?.response?.data || lastError?.message);
       return this.getLocalCybersecurityFallback(userPrompt);
     } catch (err: any) {
       console.error('[GeminiService Exception]:', err.message);
