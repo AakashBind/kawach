@@ -337,16 +337,7 @@ export const ScannerPage: React.FC = () => {
                   className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl px-4 py-3.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-mono"
                 />
               </div>
-              {loading ? (
-                renderLoadingProgress()
-              ) : (
-                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                  <Globe className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">
-                    {t('scanner.urlDesc')}
-                  </span>
-                </div>
-              )}
+              {loading && renderLoadingProgress()}
             </div>
           )}
 
@@ -378,16 +369,7 @@ export const ScannerPage: React.FC = () => {
                 placeholder={t('scanner.msgPlaceholder')}
                 className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl p-4 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 font-sans leading-relaxed"
               />
-              {loading ? (
-                renderLoadingProgress()
-              ) : (
-                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                  <MessageSquare className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">
-                    {t('scanner.msgDesc')}
-                  </span>
-                </div>
-              )}
+              {loading && renderLoadingProgress()}
             </div>
           )}
 
@@ -443,16 +425,7 @@ export const ScannerPage: React.FC = () => {
                   className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl px-4 py-3.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-mono"
                 />
               </div>
-              {loading ? (
-                renderLoadingProgress()
-              ) : (
-                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                  <Shield className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">
-                    {t('scanner.webDesc')}
-                  </span>
-                </div>
-              )}
+              {loading && renderLoadingProgress()}
             </div>
           )}
 
