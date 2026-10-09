@@ -19,18 +19,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
   const navLinks = [
     { to: '/', label: t('nav.overview'), icon: <Shield className="w-4 h-4" /> },
     { to: '/scanner', label: t('nav.scanner'), icon: <Scan className="w-4 h-4" /> },
+    { to: '/history', label: t('nav.history'), icon: <History className="w-4 h-4" /> },
+    { to: '/reports', label: t('nav.reports'), icon: <FileText className="w-4 h-4" /> },
     { to: '/models', label: t('nav.models'), icon: <Cpu className="w-4 h-4" /> },
   ];
 
   const mobileNavLinks = [
-    { to: '/', label: t('nav.overview'), icon: <Shield className="w-4 h-4" /> },
-    { to: '/scanner', label: t('nav.scanner'), icon: <Scan className="w-4 h-4" /> },
-    { to: '/models', label: t('nav.models'), icon: <Cpu className="w-4 h-4" /> },
+    ...navLinks,
     { to: '/assistant', label: 'AI Copilot', icon: <Bot className="w-4 h-4 text-cyan-400" /> },
-    ...(user ? [
-      { to: '/history', label: t('nav.history'), icon: <History className="w-4 h-4" /> },
-      { to: '/reports', label: t('nav.reports'), icon: <FileText className="w-4 h-4" /> },
-    ] : []),
     { to: '/education', label: t('nav.education'), icon: <BookOpen className="w-4 h-4" /> },
   ];
 
