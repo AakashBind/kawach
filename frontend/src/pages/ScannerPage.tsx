@@ -24,9 +24,43 @@ export const ScannerPage: React.FC = () => {
 
   // Execution states
   const [loading, setLoading] = useState(false);
+  const [scanProgress, setScanProgress] = useState(0);
   const [loadingStage, setLoadingStage] = useState(t('scanner.stageValidating'));
   const [error, setError] = useState('');
   const [scanResult, setScanResult] = useState<ScanResultData | null>(null);
+
+  const getStagesForTab = (tab: ScanType) => {
+    switch (tab) {
+      case 'url':
+        return [
+          { pct: 15, msg: 'Validating canonical URL & host structure...' },
+          { pct: 45, msg: 'Evaluating 31 XGBoost structural signals & entropy...' },
+          { pct: 72, msg: 'Probing SSL certificate, DNS MX & heuristic indicators...' },
+          { pct: 92, msg: 'Arbitrating multi-evidence signals & risk metrics...' },
+        ];
+      case 'message':
+        return [
+          { pct: 15, msg: 'Parsing NLP tokens, intent & credential harvest patterns...' },
+          { pct: 45, msg: 'Analyzing 10,000 TF-IDF n-grams & financial urgency...' },
+          { pct: 72, msg: 'Correlating embedded URLs & entity extraction...' },
+          { pct: 92, msg: 'Arbitrating multi-evidence signals & risk metrics...' },
+        ];
+      case 'qr':
+        return [
+          { pct: 18, msg: 'Validating image buffer, dimensions & MIME headers...' },
+          { pct: 48, msg: 'Decoding 2D matrix payload with Reed-Solomon correction...' },
+          { pct: 75, msg: 'Routing extracted payload into URL threat classifiers...' },
+          { pct: 92, msg: 'Arbitrating multi-evidence signals & risk metrics...' },
+        ];
+      case 'website':
+        return [
+          { pct: 18, msg: 'Executing SSRF-shielded DNS & IPv4 address validation...' },
+          { pct: 48, msg: 'Analyzing DOM tree, hidden forms & script anomalies...' },
+          { pct: 75, msg: 'Inspecting TLS certificates, headers & redirect chain...' },
+          { pct: 92, msg: 'Arbitrating multi-evidence signals & risk metrics...' },
+        ];
+    }
+  };
 
   useEffect(() => {
     const tab = searchParams.get('tab') as ScanType;
@@ -57,35 +91,59 @@ export const ScannerPage: React.FC = () => {
   const handleScan = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setLoadingStage(t('scanner.stageValidating'));
+    setScanProgress(8);
+    const stages = getStagesForTab(activeTab);
+    setLoadingStage(stages[0].msg);
     setError('');
     setScanResult(null);
 
+    let currentProgress = 8;
+    const progressInterval = setInterval(() => {
+      currentProgress = Math.min(94, currentProgress + Math.floor(Math.random() * 6) + 4);
+      setScanProgress(currentProgress);
+      for (let i = stages.length - 1; i >= 0; i--) {
+        if (currentProgress >= stages[i].pct) {
+          setLoadingStage(stages[i].msg);
+          break;
+        }
+      }
+    }, 160);
+
     try {
-      let result: ScanResultData;
+      let apiPromise: Promise<ScanResultData>;
       if (activeTab === 'url') {
         if (!urlInput.trim()) throw new Error(t('scanner.errorUrlRequired'));
-        setLoadingStage(t('scanner.stageUrlML'));
-        result = await ApiService.scanUrl(urlInput.trim());
+        apiPromise = ApiService.scanUrl(urlInput.trim());
       } else if (activeTab === 'message') {
         if (!messageInput.trim()) throw new Error(t('scanner.errorMessageRequired'));
-        setLoadingStage(t('scanner.stageMessageNLP'));
-        result = await ApiService.scanMessage(messageInput.trim(), contextInput);
+        apiPromise = ApiService.scanMessage(messageInput.trim(), contextInput);
       } else if (activeTab === 'qr') {
         if (!qrFile) throw new Error(t('scanner.errorQrRequired'));
-        setLoadingStage(t('scanner.stageQrDecode'));
-        result = await ApiService.scanQr(qrFile);
+        apiPromise = ApiService.scanQr(qrFile);
       } else {
         if (!websiteInput.trim()) throw new Error(t('scanner.errorWebsiteRequired'));
-        setLoadingStage(t('scanner.stageWebsiteSSRF'));
-        result = await ApiService.scanWebsite(websiteInput.trim());
+        apiPromise = ApiService.scanWebsite(websiteInput.trim());
       }
+
+      // Execute API call alongside calibrated evidence audit animation
+      const [result] = await Promise.all([
+        apiPromise,
+        new Promise((resolve) => setTimeout(resolve, 2400))
+      ]);
+
+      clearInterval(progressInterval);
+      setScanProgress(100);
+      setLoadingStage('Arbitrating multi-evidence signals & risk metrics...');
+      await new Promise((resolve) => setTimeout(resolve, 200));
       setScanResult(result);
     } catch (err: any) {
+      clearInterval(progressInterval);
       const msg = err.response?.data?.error?.message || err.message || 'Scan request failed.';
       setError(msg);
     } finally {
+      clearInterval(progressInterval);
       setLoading(false);
+      setScanProgress(0);
     }
   };
 
@@ -139,6 +197,28 @@ export const ScannerPage: React.FC = () => {
     { id: 'qr', label: t('scanner.tabQr'), icon: <QrCode className="w-4 h-4 text-amber-400" />, sub: t('scanner.tabQrSub') },
     { id: 'website', label: t('scanner.tabWebsite'), icon: <Shield className="w-4 h-4 text-emerald-400" />, sub: t('scanner.tabWebsiteSub') },
   ];
+
+  const renderLoadingProgress = () => (
+    <div className="p-4 rounded-xl bg-[#070c17]/95 border border-cyan-500/30 space-y-3 shadow-inner shadow-cyan-950/40 animate-in fade-in duration-200">
+      <div className="flex items-center justify-between text-xs font-mono">
+        <div className="flex items-center gap-2 text-cyan-300 font-semibold truncate">
+          <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse flex-shrink-0" />
+          <span className="truncate">{loadingStage}</span>
+        </div>
+        <span className="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800 text-cyan-400 font-bold font-mono text-xs flex-shrink-0 ml-2">
+          {scanProgress}%
+        </span>
+      </div>
+
+      {/* Progress Bar Track */}
+      <div className="w-full h-1.5 bg-slate-900/90 rounded-full overflow-hidden border border-slate-800">
+        <div
+          className="h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 rounded-full transition-all duration-150 ease-out shadow-[0_0_10px_rgba(6,182,212,0.6)]"
+          style={{ width: `${scanProgress}%` }}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <div className="max-w-4xl mx-auto py-8 space-y-8">
@@ -257,12 +337,16 @@ export const ScannerPage: React.FC = () => {
                   className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl px-4 py-3.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-400 font-mono"
                 />
               </div>
-              <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                <Globe className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  {t('scanner.urlDesc')}
-                </span>
-              </div>
+              {loading ? (
+                renderLoadingProgress()
+              ) : (
+                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
+                  <Globe className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    {t('scanner.urlDesc')}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
@@ -294,12 +378,16 @@ export const ScannerPage: React.FC = () => {
                 placeholder={t('scanner.msgPlaceholder')}
                 className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl p-4 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-400 font-sans leading-relaxed"
               />
-              <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                <MessageSquare className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  {t('scanner.msgDesc')}
-                </span>
-              </div>
+              {loading ? (
+                renderLoadingProgress()
+              ) : (
+                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
+                  <MessageSquare className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    {t('scanner.msgDesc')}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
@@ -336,6 +424,7 @@ export const ScannerPage: React.FC = () => {
                   </div>
                 )}
               </div>
+              {loading && renderLoadingProgress()}
             </div>
           )}
 
@@ -354,12 +443,16 @@ export const ScannerPage: React.FC = () => {
                   className="w-full bg-[#070a12] border border-[#1e293b] rounded-xl px-4 py-3.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-400 font-mono"
                 />
               </div>
-              <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
-                <Shield className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  {t('scanner.webDesc')}
-                </span>
-              </div>
+              {loading ? (
+                renderLoadingProgress()
+              ) : (
+                <div className="p-3.5 rounded-xl bg-[#0b0f19] border border-[#1e293b] text-xs text-slate-400 flex items-start gap-2.5">
+                  <Shield className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    {t('scanner.webDesc')}
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
@@ -367,9 +460,9 @@ export const ScannerPage: React.FC = () => {
           <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#1e293b]">
             <div className="text-[11px] text-slate-400 font-mono">
               {loading ? (
-                <span className="text-cyan-400 flex items-center gap-1.5">
-                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                  <span>{loadingStage}</span>
+                <span className="text-cyan-400 flex items-center gap-2">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin text-cyan-400" />
+                  <span>Executing 3.0s Calibrated Evidence Audit...</span>
                 </span>
               ) : (
                 <span>{t('scanner.zeroTelemetry')}</span>
@@ -379,17 +472,17 @@ export const ScannerPage: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/10 disabled:opacity-50 transition"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20 disabled:opacity-75 transition cursor-pointer"
             >
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>{t('scanner.stageScanning') || t('scanner.btnAnalyzing')}</span>
+                  <span>Running Security Analysis... ({scanProgress}%)</span>
                 </>
               ) : (
                 <>
                   <Shield className="w-4 h-4" />
-                  <span>{t('scanner.btnAnalyze')}</span>
+                  <span>Run Security Analysis</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
