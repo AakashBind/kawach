@@ -8,7 +8,7 @@ export const AssistantPage: React.FC = () => {
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Gemini AI Cyber Defense Copilot</span>
+          <span>Active Cyber Defense Copilot</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
           AI Incident Response & Scam Advisory
@@ -45,7 +45,7 @@ export const AssistantPage: React.FC = () => {
           </div>
           <div>
             <span className="font-semibold text-slate-200">Real-time Intelligence</span>
-            <p className="text-slate-400 text-[11px] mt-0.5">Powered by Google Gemini generative cyber intelligence and Kawach rule-sets.</p>
+            <p className="text-slate-400 text-[11px] mt-0.5">Powered by advanced threat models and Kawach real-time cyber defense engine.</p>
           </div>
         </div>
       </div>
