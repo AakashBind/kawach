@@ -39,6 +39,16 @@ function persistScan(
   const inputHash = crypto.createHash('sha256').update(rawInput).digest('hex');
   const sanitizedTarget = rawInput.length > 200 ? rawInput.substring(0, 197) + '...' : rawInput;
 
+  let validUserId: string | null = null;
+  if (userId) {
+    try {
+      const exists = db.prepare('SELECT id FROM users WHERE id = ?').get(userId);
+      if (exists) validUserId = userId;
+    } catch {
+      validUserId = null;
+    }
+  }
+
   const insertScan = db.prepare(`
     INSERT INTO scans (id, user_id, scan_type, input_hash, input_target, risk_level, risk_score, uncertainty, model_versions, raw_summary)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -46,7 +56,7 @@ function persistScan(
 
   insertScan.run(
     scanId,
-    userId,
+    validUserId,
     scanType,
     inputHash,
     sanitizedTarget,
@@ -78,7 +88,7 @@ function persistScan(
     );
   }
 
-  AuditService.logEvent(userId, `SCAN_${scanType.toUpperCase()}`, ip, {
+  AuditService.logEvent(validUserId, `SCAN_${scanType.toUpperCase()}`, ip, {
     scan_id: scanId,
     risk_level: riskResult.risk_level,
     risk_score: riskResult.risk_score

@@ -19,19 +19,21 @@ reportRouter.post('/', requireAuth, (req: AuthenticatedRequest, res: Response, n
     const { scan_id, category, description, evidence_summary } = ReportSchema.parse(req.body);
     const userId = req.user!.id;
 
-    // Cross-user scan attachment prevention:
-    // If a scan_id is attached to this report, verify it belongs to the authenticated user
+    let validScanId: string | null = null;
     if (scan_id) {
       const referencedScan = db.prepare('SELECT id, user_id FROM scans WHERE id = ?').get(scan_id) as any;
-      if (referencedScan && referencedScan.user_id && referencedScan.user_id !== userId) {
-        res.status(403).json({
-          success: false,
-          error: {
-            code: 'FORBIDDEN_SCAN_ATTACHMENT',
-            message: 'Referenced scan does not belong to the authenticated user.'
-          }
-        });
-        return;
+      if (referencedScan) {
+        if (referencedScan.user_id && referencedScan.user_id !== userId) {
+          res.status(403).json({
+            success: false,
+            error: {
+              code: 'FORBIDDEN_SCAN_ATTACHMENT',
+              message: 'Referenced scan does not belong to the authenticated user.'
+            }
+          });
+          return;
+        }
+        validScanId = scan_id;
       }
     }
 
@@ -40,7 +42,7 @@ reportRouter.post('/', requireAuth, (req: AuthenticatedRequest, res: Response, n
     db.prepare(`
       INSERT INTO reports (id, user_id, scan_id, category, description, status, evidence_summary)
       VALUES (?, ?, ?, ?, ?, 'submitted', ?)
-    `).run(reportId, userId, scan_id || null, category, description, evidence_summary || null);
+    `).run(reportId, userId, validScanId, category, description, evidence_summary || null);
 
     AuditService.logEvent(userId, 'FRAUD_REPORT_SUBMITTED', req.ip || '', { report_id: reportId, category, scan_id });
 

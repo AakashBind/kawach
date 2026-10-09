@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { CONFIG } from '../config.js';
+import { db } from '../database/db.js';
 
 export interface AuthenticatedUser {
   id: string;
@@ -28,6 +29,17 @@ export function requireAuth(req: AuthenticatedRequest, res: Response, next: Next
   const token = authHeader.split(' ')[1];
   try {
     const decoded = jwt.verify(token, CONFIG.JWT_SECRET) as AuthenticatedUser;
+    const userExists = db.prepare('SELECT id FROM users WHERE id = ?').get(decoded.id);
+    if (!userExists) {
+      res.status(401).json({
+        success: false,
+        error: {
+          code: 'USER_NOT_FOUND',
+          message: 'User account not found or session invalidated. Please sign in again.'
+        }
+      });
+      return;
+    }
     req.user = decoded;
     next();
   } catch (err) {
@@ -47,7 +59,10 @@ export function optionalAuth(req: AuthenticatedRequest, _res: Response, next: Ne
     const token = authHeader.split(' ')[1];
     try {
       const decoded = jwt.verify(token, CONFIG.JWT_SECRET) as AuthenticatedUser;
-      req.user = decoded;
+      const userExists = db.prepare('SELECT id FROM users WHERE id = ?').get(decoded.id);
+      if (userExists) {
+        req.user = decoded;
+      }
     } catch {
       // Continue without user
     }
