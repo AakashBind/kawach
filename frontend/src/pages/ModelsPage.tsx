@@ -196,29 +196,6 @@ export const ModelsPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Mandatory Governance Disclaimers */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="p-4 rounded-xl bg-amber-950/30 border border-amber-800/50 flex gap-3 text-xs text-amber-300">
-          <AlertTriangle className="w-5 h-5 flex-shrink-0 text-amber-400" />
-          <div className="space-y-1">
-            <span className="font-bold block uppercase tracking-wider text-[11px] text-amber-200">{t.models.evaluationScope}</span>
-            <p className="leading-relaxed">
-              {t.models.disclaimer1}
-            </p>
-          </div>
-        </div>
-
-        <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-800/50 flex gap-3 text-xs text-cyan-300">
-          <Info className="w-5 h-5 flex-shrink-0 text-cyan-400" />
-          <div className="space-y-1">
-            <span className="font-bold block uppercase tracking-wider text-[11px] text-cyan-200">{t.models.deterministicTitle}</span>
-            <p className="leading-relaxed">
-              {t.models.disclaimer2}
-            </p>
-          </div>
-        </div>
-      </div>
-
       {loading ? (
         <div className="py-16 text-center text-xs text-slate-400 font-mono">Loading model registry and governance metadata...</div>
       ) : error ? (

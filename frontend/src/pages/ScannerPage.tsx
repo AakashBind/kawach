@@ -224,10 +224,6 @@ export const ScannerPage: React.FC = () => {
     <div className="max-w-4xl mx-auto py-8 space-y-8">
       {/* Header */}
       <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider mb-1">
-          <Terminal className="w-3.5 h-3.5" />
-          {t('scanner.badge')}
-        </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
           {t('scanner.title')}
         </h1>
