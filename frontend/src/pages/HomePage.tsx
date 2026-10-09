@@ -186,11 +186,11 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div ref={pageContainerRef} className="space-y-12 sm:space-y-14 py-4 sm:py-6">
+    <div ref={pageContainerRef} className="space-y-10 sm:space-y-12 pt-1 pb-6">
       {/* 1. ENTERPRISE TWO-COLUMN HERO SECTION */}
       <section
         ref={heroRef}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#0e1626] to-[#080d18] border border-slate-800/90 p-6 sm:p-8 lg:p-10 shadow-2xl"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#0e1626] to-[#080d18] border border-slate-800/90 p-6 sm:p-7 lg:p-8 shadow-2xl"
       >
         {/* Subtle Background Glow Elements */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -198,7 +198,7 @@ export const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
           {/* Left Column: Product Message & Actions */}
-          <div ref={heroLeftRef} className="lg:col-span-7 space-y-6">
+          <div ref={heroLeftRef} className="lg:col-span-7 space-y-5">
             <h1 className="hero-title-elem text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
               Think Before You Click with <span className="text-cyan-400">Scam Shield.</span>
             </h1>
