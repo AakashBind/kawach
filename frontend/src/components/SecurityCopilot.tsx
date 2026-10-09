@@ -146,9 +146,6 @@ export const SecurityCopilot: React.FC<{ defaultOpen?: boolean; isPageMode?: boo
           <div>
             <div className="flex items-center gap-2">
               <span className="font-semibold text-sm text-slate-100">Kawach Copilot</span>
-              <span className="text-[10px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-                Security Advisor
-              </span>
             </div>
             <p className="text-[11px] text-slate-400">Emergency Incident & Scam Guidance</p>
           </div>
