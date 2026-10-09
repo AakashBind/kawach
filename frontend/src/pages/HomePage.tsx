@@ -16,10 +16,10 @@ export const HomePage: React.FC = () => {
 
   // Auto-typing scanner modalities rotator
   const typewriterPhrases = [
-    'URL Threat Scanner',
-    'Message and Email Scanner',
-    'QR Matrix Decoder Scanner',
-    'Website Analyser'
+    'Message',
+    'URL Link',
+    'QR Code',
+    'Website DOM'
   ];
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
@@ -63,17 +63,12 @@ export const HomePage: React.FC = () => {
     if (prefersReducedMotion || !pageContainerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1. Initial Hero Staggered Console Entrance (Safe fromTo with clearProps)
+      // 1. Initial Hero Staggered Console Entrance
       const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      heroTl.fromTo('.hero-badge-elem', 
-        { y: -12, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 0.4, clearProps: 'all' }
-      )
-      .fromTo('.hero-title-elem', 
+      heroTl.fromTo('.hero-title-elem', 
         { y: 15, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 0.5, clearProps: 'all' }, 
-        '-=0.2'
+        { y: 0, opacity: 1, duration: 0.5, clearProps: 'all' }
       )
       .fromTo('.hero-desc-elem', 
         { y: 12, opacity: 0 }, 
@@ -87,7 +82,7 @@ export const HomePage: React.FC = () => {
       )
       .fromTo('.hero-cta-elem', 
         { y: 12, opacity: 0 }, 
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, clearProps: 'all' }, 
+        { y: 0, opacity: 1, duration: 0.4, clearProps: 'all' }, 
         '-=0.2'
       )
       .fromTo(heroVisualRef.current, 
@@ -204,28 +199,20 @@ export const HomePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
           {/* Left Column: Product Message & Actions */}
           <div ref={heroLeftRef} className="lg:col-span-7 space-y-6">
-            <div className="hero-badge-elem inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-cyan-300 text-xs font-semibold font-mono uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              {t('home.badge')}
-            </div>
-
             <h1 className="hero-title-elem text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
-              {t('home.heroTitle')}
+              Think Before You Click with <span className="text-cyan-400">Scam Shield.</span>
             </h1>
 
             <p className="hero-desc-elem text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
-              {t('home.heroDesc')}
+              Got a suspicious message, link, QR code, or website? Check it with Scam Shield and learn what warning signs to look for.
             </p>
 
             {/* Auto-typing Scanner Engine Stream */}
-            <div className="hero-typewriter-elem inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#070c17]/90 border border-cyan-500/30 text-xs sm:text-sm font-mono shadow-inner shadow-cyan-950/40">
-              <div className="flex items-center gap-1.5 text-cyan-400 font-bold">
-                {/* <Terminal className="w-3.5 h-3.5" /> */}
-                <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Target:</span>
-              </div>
-              <div className="flex items-center font-bold text-cyan-300 min-w-[210px] sm:min-w-[240px]">
+            <div className="hero-typewriter-elem inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#070c17]/90 border border-slate-700/70 text-xs sm:text-sm font-mono shadow-inner shadow-cyan-950/40">
+              <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">WE OFFER:</span>
+              <div className="flex items-center font-bold text-cyan-300 min-w-[130px]">
                 <span>{typedText}</span>
-                <span className="w-1.5 h-4 bg-cyan-400 ml-1 animate-pulse" />
+                <span className="w-1.5 h-3.5 bg-cyan-400 ml-1 animate-pulse" />
               </div>
             </div>
 
@@ -233,20 +220,12 @@ export const HomePage: React.FC = () => {
               <button
                 onClick={handleLaunchScanner}
                 disabled={isScanning}
-                className="hero-cta-elem px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-cyan-600/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-75 cursor-pointer"
+                className="hero-cta-elem px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-75 cursor-pointer"
               >
                 <Shield className="w-4 h-4" />
-                <span>{isScanning ? t('scanner.stageValidating') : t('home.launchScanner')}</span>
+                <span>{isScanning ? t('scanner.stageValidating') : 'Launch Multi-Scanner'}</span>
                 <ArrowRight className={`w-4 h-4 transition-transform ${isScanning ? 'translate-x-1 animate-pulse' : 'group-hover:translate-x-1'}`} />
               </button>
-
-              <Link
-                to="/models"
-                className="hero-cta-elem px-5 py-3.5 rounded-xl bg-[#0b0f19] hover:bg-[#131d33] text-slate-200 border border-slate-800 hover:border-slate-600 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
-              >
-                <Cpu className="w-4 h-4 text-cyan-400" />
-                <span>{t('home.inspectModels')}</span>
-              </Link>
             </div>
           </div>
 

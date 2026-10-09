@@ -19,12 +19,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
   const navLinks = [
     { to: '/', label: t('nav.overview'), icon: <Shield className="w-4 h-4" /> },
     { to: '/scanner', label: t('nav.scanner'), icon: <Scan className="w-4 h-4" /> },
+    { to: '/models', label: t('nav.models'), icon: <Cpu className="w-4 h-4" /> },
+  ];
+
+  const mobileNavLinks = [
+    { to: '/', label: t('nav.overview'), icon: <Shield className="w-4 h-4" /> },
+    { to: '/scanner', label: t('nav.scanner'), icon: <Scan className="w-4 h-4" /> },
+    { to: '/models', label: t('nav.models'), icon: <Cpu className="w-4 h-4" /> },
     { to: '/assistant', label: 'AI Copilot', icon: <Bot className="w-4 h-4 text-cyan-400" /> },
     ...(user ? [
       { to: '/history', label: t('nav.history'), icon: <History className="w-4 h-4" /> },
       { to: '/reports', label: t('nav.reports'), icon: <FileText className="w-4 h-4" /> },
     ] : []),
-    { to: '/models', label: t('nav.models'), icon: <Cpu className="w-4 h-4" /> },
     { to: '/education', label: t('nav.education'), icon: <BookOpen className="w-4 h-4" /> },
   ];
 
@@ -92,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
               </Link>
               <Link
                 to="/register"
-                className="px-3 py-1.5 text-xs font-bold bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg shadow-sm transition hidden sm:inline-block"
+                className="px-3.5 py-1.5 text-xs font-bold bg-cyan-500 hover:bg-cyan-400 text-white rounded-lg shadow-sm transition hidden sm:inline-block"
               >
                 {t('nav.createAccount')}
               </Link>
@@ -113,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-[#1e293b] bg-[#0b0f19] px-4 py-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
-          {navLinks.map((item) => {
+          {mobileNavLinks.map((item) => {
             const active = location.pathname === item.to;
             return (
               <Link

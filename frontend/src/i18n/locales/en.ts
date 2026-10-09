@@ -43,8 +43,8 @@ export const en: Translations = {
   },
   home: {
     badge: 'V2.0 Production Cybersecurity Architecture',
-    heroTitle: 'High-Precision Multimodal Threat Intelligence & Phishing Defense.',
-    heroDesc: 'Real-time scam, message lure, QR code, and website risk detection. Built on reproducible supervised machine learning models with cryptographic SHA-256 weight validation and zero synthetic test numbers.',
+    heroTitle: 'Think Before You Click with Scam Shield.',
+    heroDesc: 'Got a suspicious message, link, QR code, or website? Check it with Scam Shield and learn what warning signs to look for.',
     launchScanner: 'Launch Multi-Scanner',
     inspectModels: 'Inspect Model Governance & SHA-256',
     urlClassifier: 'URL Classifier',
